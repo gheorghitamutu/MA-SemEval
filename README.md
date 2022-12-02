@@ -2,45 +2,27 @@
 Machine Translation Final Project - SemEval
 
 - [MA-SemEval](#ma-semeval)
-- [State of Art \& Previous Work](#state-of-art--previous-work)
+- [State of Art](#state-of-art)
   - [What is SemEval?](#what-is-semeval)
-  - [Previous Work (FII Team)](#previous-work-fii-team)
   - [SemEval 2023 Multilingual Tasks](#semeval-2023-multilingual-tasks)
   - [SemEval 2022 Multilingual Tasks](#semeval-2022-multilingual-tasks)
   - [SemEval 2021 Multilingual Tasks](#semeval-2021-multilingual-tasks)
   - [SemEval 2020 Multilingual Tasks](#semeval-2020-multilingual-tasks)
+  - [Previous Work](#previous-work)
+    - [FII](#fii)
+    - [MultiCoNER](#multiconer)
+- [Options from SemEVAL 2023 tasks](#options-from-semeval-2023-tasks)
+    - [Task 2: Multilingual Complex Named Entity Recognition (MultiCoNER 2)](#task-2-multilingual-complex-named-entity-recognition-multiconer-2)
+    - [Task 3: Detecting the Category, the Framing, and the Persuasion Techniques in Online News in a Multi-lingual Setup](#task-3-detecting-the-category-the-framing-and-the-persuasion-techniques-in-online-news-in-a-multi-lingual-setup)
+    - [Task 9: Multilingual Tweet Intimacy Analysis](#task-9-multilingual-tweet-intimacy-analysis)
 
 
-# State of Art & Previous Work
+# State of Art
 
 ## What is SemEval?
 > SemEval is a series of international natural language processing (NLP) research workshops whose mission is to advance the current state of the art in semantic analysis and to help create high-quality annotated datasets in a range of increasingly challenging problems in natural language semantics. Each year's workshop features a collection of shared tasks in which computational semantic analysis systems designed by different teams are presented and compared.
 
 https://semeval.github.io
-
-## Previous Work (FII Team)
-FII had a previous entry at SemEval in 2021 for [Task 2: Multilingual and Cross-lingual Word-in-Context Disambiguation](https://aclanthology.org/2021.semeval-1.104).
-
-The paper presents:
-> a word-in-context disambiguation system. The task focuses on capturing the polysemous nature of words in a multilingual and cross-lingual 
-setting, without considering a strict inventory of word meanings. The system applies Natural Language Processing algorithms on datasets from SemEval 2021 
-Task 2, being able to identify the meaning of words for the languages Arabic, Chinese, English, French and Russian, without making use of any additional mono- or 
-multilingual resources.
-
-Models used in that task were, as stated [here](https://aclanthology.org/2021.semeval-1.104.pdf): 
-> Sent2Vec presents a simple but efficient unsupervised method to train distributed representations of sentences.
-
-> As baseline, we used the Lesk algorithm.
-
-> Our final approach was to combine the Lesk algorithm, along with Sent2Vec and vector cosine (Bojanowski et al., 2017). The cosine similarity is 
-computed for each pair of sentences in our input. The pipeline used cross-lingually aligned versions of fasttext word vectors.
- 
- The structure of this entry is:
-
- Section 1 - Introduction
- > section 2 describes the literature related to sense disambiguation, section 3 presents the dataset and 
-method of this study, section 4 resumes the results of the conducted experiments, followed by section 
-5 with the conclusions and discussions about how to increase the accuracy.
 
 ## SemEval 2023 Multilingual Tasks
 https://semeval.github.io/SemEval2023
@@ -58,7 +40,7 @@ https://semeval.github.io/SemEval2022
 | ----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------- |
 | Lexical semantics                       | [Task 2: Multilingual Idiomaticity Detection and Sentence Embedding](https://sites.google.com/view/semeval2022task2-idiomaticity) |
 | Discourse, documents, and multimodality | [Task 8: Multilingual news article similarity](http://euagendas.org/semeval2022)                                                  |
-| Information extraction                  | [Task 11: MultiCoNER - Multilingual Complex Named Entity Recognition](https://multiconer.github.io/)                              |
+| Information extraction                  | [Task 11: MultiCoNER - Multilingual Complex Named Entity Recognition](https://multiconer.github.io)                               |
 
 
 | Task | Papers                                                                                                                                                                                                      |
@@ -253,3 +235,130 @@ https://alt.qcri.org/semeval2020
 | 12   | [WOLI at SemEval-2020 Task 12: Arabic Offensive Language Identification on Different Twitter Datasets](https://aclanthology.org/2020.semeval-1.298)                                                                 |
 | 12   | [XD at SemEval-2020 Task 12: Ensemble Approach to Offensive Language Identification in Social Media Using Transformer Encoders](https://aclanthology.org/2020.semeval-1.299)                                        |
 | 12   | [YNU_oxz at SemEval-2020 Task 12: Bidirectional GRU with Capsule for Identifying Multilingual Offensive Language](https://aclanthology.org/2020.semeval-1.300)                                                      |
+
+ ## Previous Work
+
+ ### FII
+FII had a previous entry at SemEval in 2021 for [Task 2: Multilingual and Cross-lingual Word-in-Context Disambiguation](https://aclanthology.org/2021.semeval-1.104).
+
+The paper presents:
+> a word-in-context disambiguation system. The task focuses on capturing the polysemous nature of words in a multilingual and cross-lingual 
+setting, without considering a strict inventory of word meanings. The system applies Natural Language Processing algorithms on datasets from SemEval 2021 
+Task 2, being able to identify the meaning of words for the languages Arabic, Chinese, English, French and Russian, without making use of any additional mono- or 
+multilingual resources.
+
+Models used in that task were, as stated [here](https://aclanthology.org/2021.semeval-1.104.pdf): 
+> Sent2Vec presents a simple but efficient unsupervised method to train distributed representations of sentences.
+
+> As baseline, we used the Lesk algorithm.
+
+> Our final approach was to combine the Lesk algorithm, along with Sent2Vec and vector cosine (Bojanowski et al., 2017). The cosine similarity is 
+computed for each pair of sentences in our input. The pipeline used cross-lingually aligned versions of fasttext word vectors.
+ 
+ The structure of this entry is:
+
+ Section 1 - Introduction
+ > section 2 describes the literature related to sense disambiguation, section 3 presents the dataset and 
+method of this study, section 4 resumes the results of the conducted experiments, followed by section 
+5 with the conclusions and discussions about how to increase the accuracy.
+
+### MultiCoNER
+
+MultiCoNER purpose:
+> Complex named entities (NE), like the titles of creative works, are not simple nouns and pose challenges for NER systems (Ashwini and Choi, 2014). 
+> They can take the form of any linguistic constituent, like an imperative clause (“Dial M for Murder”), and do not look like traditional NEs (Persons, Locations, etc.). 
+> This syntactic ambiguity makes it challenging to recognize them based on context.
+> 
+MultiCoNER had a task in 2022 at category [Information extraction - Task 11: MultiCoNER - Multilingual Complex Named Entity Recognition](https://multiconer.github.io).
+
+Its findings are presented [here](https://aclanthology.org/2022.semeval-1.196.pdf).
+> Divided into 13 tracks, the task focused on methods to identify complex named entities (like media titles, products, and groups) in 11 languages in both monolingual and multi-lingual scenarios.
+> Eleven tracks were for building monolingual NER models for individual languages, one track focused on multilingual models able to work on all languages, and the last track featured 
+> code-mixed texts within any of these languages.
+
+Subsets:
+> Monolingual Subsets: Each of the 11 languages has its own subset, which includes data from all three domains.
+> Multilingual Subset: This contains randomly sampled data from all the languages mixed into a single subset. 
+> This subset is designed for evaluating multilingual models, and should ideally be used under the assumption that the language for each sentence is unknown.
+> Code-mixed Subset: This subset contains codemixed instances, where the entity is from one language and the rest of the text is written in another language. 
+> Like the multilingual subset, this subset should also be used under the assumption that the languages present in an instance are unknown.
+
+Participating Systems and Results:
+> received submissions from 55 different teams. Among the monolingual tracks, we have observed the highest participation of 30 teams in the English track.
+> Ordered by the number of participating teams, the other monolingual tracks are Chinese (21), Bangla (18), Spanish (18), Hindi (17), Korean (17), German (16), Dutch (15), Farsi (15), Turkish (15), and Russian (14). 
+> The number of participating teams for the Multilingual and Code-mixed tracks are 25 and 21, respectively.
+> Most of the top-performing teams aimed at building their system targeting the multilingual track, and then retrained it for the other tracks separately and made submissions to all the 13 tracks.
+
+Top Multilingual Systems
+From the paper, best systems were DAMO-NLP & USTC-NELSLIP followed by QTrade AI.
+
+> DAMO-NLP (Wang et al., 2022) ranked 1st in the multilingual (MULTI) track and all the monolingual tracks except BN (2nd) and ZH (4th). 
+> Given a text, they used a knowledge retrieval module to retrieve K most relevant paragraphs from a knowledge base (i.e. Wikipedia). 
+> Paragraphs were concatenated together with the input, and token representations were passed through a CRF to predict the labels. 
+> They employed multiple such XLMRoBERTa models with random seeds and then used a voting strategy to make the final prediction.
+
+> USTC-NELSLIP (Chen et al., 2022a) ranked 1st in three tracks (MIX, ZH, BN), and 2nd for all the other tracks. 
+> The average performance gap between USTC-NELSLIP and DAMO-NLP is ≈3% for all the 13 tracks. 
+> USTC-NELSLIP aimed at fine-tuning a Gazetteer enhanced BiLSTM network in such a way that the representation produced for an entity has similarity with the representation produced by a pre-trained language model (LM).
+> They developed a two-step process with two parallel networks, where a Gazetteer-BiLSTM uses a Gazetteer search to produce one-hot labels for each token in a given text and a BiLSTM produces 
+> a dense vector representation for each token. Another network uses a frozen XLM-RoBERTa to produce an embedding vector for each token. 
+> A KL divergence loss is applied to make the Gazetteer network’s output similar to the LM. These two networks are jointly trained together again and their outputs are fused together for the final prediction.
+
+> USTC-NELSLIP (Chen et al., 2022a) ranked 1st in three tracks (MIX, ZH, BN), and 2nd for all the other tracks. 
+> The average performance gap between USTC-NELSLIP and DAMO-NLP is ≈3% for all the 13 tracks. 
+> USTC-NELSLIP aimed at fine-tuning a Gazetteer enhanced BiLSTM network in such a way that the representation produced for an entity has similarity with the representation produced by a pre-trained language model (LM).
+> They developed a two-step process with two parallel networks, where a Gazetteer-BiLSTM uses a Gazetteer search to produce one-hot labels for each token in a given text and a BiLSTM produces
+> a dense vector representation for each token. Another network uses a frozen XLM-RoBERTa to produce an embedding vector for each token. 
+> A KL divergence loss is applied to make the Gazetteer network’s output similar to the LM. 
+> These two networks are jointly trained together again and their outputs are fused together for the final prediction.
+
+The entire list also contains: SeqL & CMB AI Lab. Other noteworthy systems were RACAI, Sliced, MaChAmp, OPDAI, CASIA, PAI, SU-NLP, Infrrd.ai, UM6P-CS, Multilinguals, L3i, MarSan, TEAM-Atreides, UA-KO
+CSECU-DSG, PA Ph&Tech, Raccoons, AaltoNLP, LMN, UC3M-PUCPR, NamedEntityRangers, CMNEROne, KDDIE, DS4DH & NCUEE-NLP. All of them are presented in the paper.
+
+Conclusion
+> Most of the top-performing teams in MULTICONER utilized external knowledge bases like Wikipedia and Gazetteer. They also tend to use XLM-RoBERTa as the pre-trained language model. 
+> In terms of modeling approaches, ensemble strategies helped the systems to achieve strong performance. 
+> Results from the top teams indicate that identifying complex entities like creative works is still difficult among all the classes even with the usage of external data.
+
+# Options from SemEVAL 2023 tasks
+
+From the 3 multilingual tasks available for this edition:
+
+### [Task 2: Multilingual Complex Named Entity Recognition (MultiCoNER 2)](http://multiconer.github.io) 
+> Complex named entities (NE), like the titles of creative works, are not simple nouns and pose challenges for NER systems (Ashwini and Choi, 2014). 
+> They can take the form of any linguistic constituent, like an imperative clause (“Dial M for Murder”), and do not look like traditional NEs (Persons, Locations, etc.). 
+> This syntactic ambiguity makes it challenging to recognize them based on context. 
+> We organized the MultiCoNER task (Malmasi et al., 2022) at SemEval-2022 to address these challenges in 11 languages, receiving a very positive community response with 34 system papers. 
+> Results confirmed the challenges of processing complex and long-tail NEs: even the largest pre-trained Transformers did not achieve top performance without external knowledge. 
+> The top systems infused transformers with knowledge bases and gazetteers. 
+> However, such solutions are brittle against out of knowledge-base entities and noisy scenarios like the presence of spelling mistakes and typos. 
+> We propose MultiCoNER II which represents novel challenges through new tasks that emphasize the shortcomings of the current top models.
+
+There are examples from the past year. It may be the *easiest* to reproduce and then maybe tweaking the systems for better results. We already know what worked and what not.
+
+### [Task 3: Detecting the Category, the Framing, and the Persuasion Techniques in Online News in a Multi-lingual Setup](https://propaganda.math.unipd.it/semeval2023task3)
+> Subtask 1: News Genre Categorisation
+> Definition: given a news article, determine whether it is an opinion piece, aims at objective news reporting, or is a satire piece. This is a multi-class (single-label) task at article-level.
+
+> Subtask 2: Framing Detection
+> Definition: given a news article, identify the frames used in the article. This is a multi-label task at article-level.
+
+> Subtask 3: Persuasion Techniques Detection
+> Definition 1: given a news article, identify the persuasion techniques in each paragraph. This is a multi-label task at paragraph level.
+
+From a personal viewpoint, I didn't find much data on SemEval about this type of task. It may require the most research to be done comparing with Task 2 & Task 9.
+
+### [Task 9: Multilingual Tweet Intimacy Analysis](https://semeval.github.io/SemEval2023/tasks#:~:text=Task%209%3A%20Multilingual%20Tweet%20Intimacy%20Analysis) 
+
+> The goal of this task is to predict the intimacy of tweets in 10 languages. 
+> You are given a set of tweets in six languages (English, Spanish, Italian, Portuguese, French, and Chinese) annotated with intimacy scores ranging from 1-5 to train your model.
+> You are encouraged (but not required) to also use the question intimacy dataset (Pei and Jurgens, 2020) which contains 2247 English questions from Reddit as well as another 150 questions from Books, Movies, and Twitter. 
+> Please note that the intimacy scores in this dataset range from -1 to 1 so you might need to consider data augmentation methods or other methods mapping the intimacy scores to the 1-5 range in the current task. 
+> Please check out the paper for more details about this question intimacy dataset.
+> The model performance will be evaluated on the test set in the given 6 languages as well as an external test set with 4 languages not in the training data (Hindi, Arabic, Dutch and Korean).
+> We will use Pearson's r as the evaluation metric. 
+
+No previous multilingual Twitter Intimacy Analysis were given at SemEval but there are several papers quantifying this:
+- [Self-disclosure topic model for classifying and analyzing Twitter conversations](https://aclanthology.org/D14-1213.pdf)
+- [Quantifying Intimacy in Language](https://aclanthology.org/2020.emnlp-main.428.pdf)
+Probably the hardest part is using a model targeting the multilingual viewpoint.
