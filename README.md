@@ -51,6 +51,16 @@ https://semeval.github.io/SemEval2023
 | Discourse and Argumentation | [Task 3: Detecting the Category, the Framing, and the Persuasion Techniques in Online News in a Multi-lingual Setup](https://propaganda.math.unipd.it/semeval2023task3) |
 | Social Attitudes            | [Task 9: Multilingual Tweet Intimacy Analysis](https://semeval.github.io/SemEval2023/tasks#:~:text=Task%209%3A%20Multilingual%20Tweet%20Intimacy%20Analysis)            |
 
+## SemEval 2022 Multilingual Tasks
+https://semeval.github.io/SemEval2022
+
+| Type                                    | Task                                                                                                                              |
+| ----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------- |
+| Lexical semantics                       | [Task 2: Multilingual Idiomaticity Detection and Sentence Embedding](https://sites.google.com/view/semeval2022task2-idiomaticity) |
+| Discourse, documents, and multimodality | [Task 8: Multilingual news article similarity](http://euagendas.org/semeval2022)                                                  |
+| Information extraction                  | [Task 11: MultiCoNER - Multilingual Complex Named Entity Recognition](https://multiconer.github.io/)                              |
+
+
 | Task | Papers                                                                                                                                                                                                      |
 | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 2    | [SemEval-2022 Task 2: Multilingual Idiomaticity Detection and Sentence Embedding](https://aclanthology.org/2022.semeval-1.13)                                                                               |
@@ -125,15 +135,6 @@ https://semeval.github.io/SemEval2023
 | 11   | [Qtrade AI at SemEval-2022 Task 11: An Unified Framework for Multilingual NER Task](https://aclanthology.org/2022.semeval-1.228)                                                                            |
 | 11   | [PAI at SemEval-2022 Task 11: Name Entity Recognition with Contextualized Entity Representations and Robust Loss Functions](https://aclanthology.org/2022.semeval-1.229)                                    |
 
-## SemEval 2022 Multilingual Tasks
-https://semeval.github.io/SemEval2022
-
-| Type                                    | Task                                                                                                                              |
-| ----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------- |
-| Lexical semantics                       | [Task 2: Multilingual Idiomaticity Detection and Sentence Embedding](https://sites.google.com/view/semeval2022task2-idiomaticity) |
-| Discourse, documents, and multimodality | [Task 8: Multilingual news article similarity](http://euagendas.org/semeval2022)                                                  |
-| Information extraction                  | [Task 11: MultiCoNER - Multilingual Complex Named Entity Recognition](https://multiconer.github.io/)                              |
-
 ## SemEval 2021 Multilingual Tasks
 https://semeval.github.io/SemEval2021
 
@@ -142,10 +143,113 @@ https://semeval.github.io/SemEval2021
 | Lexical semantics                       | [Task 2: Multilingual and Cross-lingual Word-in-Context Disambiguation](https://competitions.codalab.org/competitions/27054) |
 | Discourse, documents, and multimodality | Task 3: Span- and Dependency-based Multilingual and Cross-lingual Semantic Role Labeling (no entries, link not available)    |
 
+
+| Task | Papers                                                                                                                                                                                                              |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2    | [SemEval-2021 Task 2: Multilingual and Cross-lingual Word-in-Context Disambiguation (MCL-WiC)](https://aclanthology.org/2021.semeval-1.3  )                                                                         |
+| 2    | [Uppsala NLP at SemEval-2021 Task 2: Multilingual Language Models for Fine-tuning and Feature Extraction in Word-in-Context Disambiguation](https://aclanthology.org/2021.semeval-1.15 )                            |
+| 2    | [SkoltechNLP at SemEval-2021 Task 2: Generating Cross-Lingual Training Data for the Word-in-Context Task](https://aclanthology.org/2021.semeval-1.16 )                                                              |
+| 2    | [Zhestyatsky at SemEval-2021 Task 2: ReLU over Cosine Similarity for BERT Fine-tuning](https://aclanthology.org/2021.semeval-1.17 )                                                                                 |
+| 2    | [SzegedAI at SemEval-2021 Task 2: Zero-shot Approach for Multilingual and Cross-lingual Word-in-Context Disambiguation](https://aclanthology.org/2021.semeval-1.18 )                                                |
+| 2    | [MCL@IITK at SemEval-2021 Task 2: Multilingual and Cross-lingual Word-in-Context Disambiguation using Augmented Data, Signals, and Transformers](https://aclanthology.org/2021.semeval-1.62 )                       |
+| 2    | [GX at SemEval-2021 Task 2: BERT with Lemma Information for MCL-WiC Task](https://aclanthology.org/2021.semeval-1.92 )                                                                                              |
+| 2    | [PALI at SemEval-2021 Task 2: Fine-Tune XLM-RoBERTa for Word in Context Disambiguation](https://aclanthology.org/2021.semeval-1.93 )                                                                                |
+| 2    | [hub at SemEval-2021 Task 2: Word Meaning Similarity Prediction Model Based on RoBERTa and Word Frequency](https://aclanthology.org/2021.semeval-1.94 )                                                             |
+| 2    | [Lotus at SemEval-2021 Task 2: Combination of BERT and Paraphrasing for English Word Sense Disambiguation](https://aclanthology.org/2021.semeval-1.95 )                                                             |
+| 2    | [Cambridge at SemEval-2021 Task 2: Neural WiC-Model with Data Augmentation and Exploration of Representation](https://aclanthology.org/2021.semeval-1.96 )                                                          |
+| 2    | [UoB_UK at SemEval 2021 Task 2: Zero-Shot and Few-Shot Learning for Multi-lingual and Cross-lingual Word Sense Disambiguation.](https://aclanthology.org/2021.semeval-1.97 )                                        |
+| 2    | [PAW at SemEval-2021 Task 2: Multilingual and Cross-lingual Word-in-Context Disambiguation : Exploring Cross Lingual Transfer, Augmentations and Adversarial Training](https://aclanthology.org/2021.semeval-1.98 ) |
+| 2    | [LU-BZU at SemEval-2021 Task 2: Word2Vec and Lemma2Vec performance in Arabic Word-in-Context disambiguation](https://aclanthology.org/2021.semeval-1.99 )                                                           |
+| 2    | [GlossReader at SemEval-2021 Task 2: Reading Definitions Improves Contextualized Word Embeddings](https://aclanthology.org/2021.semeval-1.100)                                                                      |
+| 2    | [UAlberta at SemEval-2021 Task 2: Determining Sense Synonymy via Translations](https://aclanthology.org/2021.semeval-1.101)                                                                                         |
+| 2    | [TransWiC at SemEval-2021 Task 2: Transformer-based Multilingual and Cross-lingual Word-in-Context Disambiguation](https://aclanthology.org/2021.semeval-1.102)                                                     |
+| 2    | [LIORI at SemEval-2021 Task 2: Span Prediction and Binary Classification approaches to Word-in-Context Disambiguation](https://aclanthology.org/2021.semeval-1.103)                                                 |
+| 2    | [FII_CROSS at SemEval-2021 Task 2: Multilingual and Cross-lingual Word-in-Context Disambiguation](https://aclanthology.org/2021.semeval-1.104)                                                                      |
+| 3    | Task 3: Span- and Dependency-based Multilingual and Cross-lingual Semantic Role Labeling (no entries, link not available)                                                                                           |
+
 ## SemEval 2020 Multilingual Tasks
 https://alt.qcri.org/semeval2020
 
-| Type                                    | Task                                                                                                                                         |
-| ----------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------- |
-| Lexical semantics                       | [Task 2: Predicting Multilingual and Cross-Lingual (Graded) Lexical Entailment](https://competitions.codalab.org/competitions/20865)         |
-| Societal Applications of NLP            | [Task 12: OffensEval 2: Multilingual Offensive Language Identification in Social Media](https://sites.google.com/site/offensevalsharedtask/) |
+| Type                                    | Task                                                                                                                                        |
+| ----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------- |
+| Lexical semantics                       | [Task 2: Predicting Multilingual and Cross-Lingual (Graded) Lexical Entailment](https://competitions.codalab.org/competitions/20865)        |
+| Societal Applications of NLP            | [Task 12: OffensEval 2: Multilingual Offensive Language Identification in Social Media](https://sites.google.com/site/offensevalsharedtask) |
+
+
+| Task | Papers                                                                                                                                                                                                              |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2    | [SemEval-2020 Task 2: Predicting Multilingual and Cross-Lingual (Graded) Lexical Entailment](https://aclanthology.org/2020.semeval-1.2 )                                                                            |
+| 2    | [BMEAUT at SemEval-2020 Task 2: Lexical Entailment with Semantic Graphs](https://aclanthology.org/2020.semeval-1.15)                                                                                                |
+| 2    | [SHIKEBLCU at SemEval-2020 Task 2: An External Knowledge-enhanced Matrix for Multilingual and Cross-Lingual Lexical Entailment](https://aclanthology.org/2020.semeval-1.31)                                         |
+| 2    | [UAlberta at SemEval-2020 Task 2: Using Translations to Predict Cross-Lingual Entailment](https://aclanthology.org/2020.semeval-1.32)                                                                               |
+| 12   | [SemEval-2020 Task 12: Multilingual Offensive Language Identification in Social Media (OffensEval 2020)](https://aclanthology.org/2020.semeval-1.188)                                                               |
+| 12   | [Galileo at SemEval-2020 Task 12: Multi-lingual Learning for Offensive Language Identification Using Pre-trained Language Models](https://aclanthology.org/2020.semeval-1.189)                                      |
+| 12   | [AdelaideCyC at SemEval-2020 Task 12: Ensemble of Classifiers for Offensive Language Detection in Social Media](https://aclanthology.org/2020.semeval-1.198)                                                        |
+| 12   | [ANDES at SemEval-2020 Task 12: A Jointly-trained BERT Multilingual Model for Offensive Language Detection](https://aclanthology.org/2020.semeval-1.199)                                                            |
+| 12   | [BhamNLP at SemEval-2020 Task 12: An Ensemble of Different Word Embeddings and Emotion Transfer Learning for Arabic Offensive Language Identification in Social Media](https://aclanthology.org/2020.semeval-1.200) |
+| 12   | [FBK-DH at SemEval-2020 Task 12: Using Multi-channel BERT for Multilingual Offensive Language Detection](https://aclanthology.org/2020.semeval-1.201)                                                               |
+| 12   | [GruPaTo at SemEval-2020 Task 12: Retraining mBERT on Social Media and Fine-tuned Offensive Language Models](https://aclanthology.org/2020.semeval-1.202)                                                           |
+| 12   | [GUIR at SemEval-2020 Task 12: Domain-Tuned Contextualized Models for Offensive Language Detection](https://aclanthology.org/2020.semeval-1.203)                                                                    |
+| 12   | [IIITG-ADBU at SemEval-2020 Task 12: Comparison of BERT and BiLSTM in Detecting Offensive Language](https://aclanthology.org/2020.semeval-1.204)                                                                    |
+| 12   | [LT@Helsinki at SemEval-2020 Task 12: Multilingual or Language-specific BERT?](https://aclanthology.org/2020.semeval-1.205)                                                                                         |
+| 12   | [NLPDove at SemEval-2020 Task 12: Improving Offensive Language Detection with Cross-lingual Transfer](https://aclanthology.org/2020.semeval-1.206)                                                                  |
+| 12   | [Nova-Wang at SemEval-2020 Task 12: OffensEmblert: An Ensemble ofOffensive Language Classifiers](https://aclanthology.org/2020.semeval-1.207)                                                                       |
+| 12   | [NUIG at SemEval-2020 Task 12: Pseudo Labelling for Offensive Content Classification](https://aclanthology.org/2020.semeval-1.208)                                                                                  |
+| 12   | [PRHLT-UPV at SemEval-2020 Task 12: BERT for Multilingual Offensive Language Detection](https://aclanthology.org/2020.semeval-1.209)                                                                                |
+| 12   | [PUM at SemEval-2020 Task 12: Aggregation of Transformer-based Models’ Features for Offensive Language Recognition](https://aclanthology.org/2020.semeval-1.210)                                                    |
+| 12   | [SINAI at SemEval-2020 Task 12: Offensive Language Identification Exploring Transfer Learning Models](https://aclanthology.org/2020.semeval-1.211)                                                                  |
+| 12   | [Team Oulu at SemEval-2020 Task 12: Multilingual Identification of Offensive Language, Type and Target of Twitter Post Using Translated Datasets](https://aclanthology.org/2020.semeval-1.212)                      |
+| 12   | [UHH-LT at SemEval-2020 Task 12: Fine-Tuning of Pre-Trained Transformer Networks for Offensive Language Detection](https://aclanthology.org/2020.semeval-1.213)                                                     |
+| 12   | [AlexU-BackTranslation-TL at SemEval-2020 Task 12: Improving Offensive Language Detection Using Data Augmentation and Transfer Learning](https://aclanthology.org/2020.semeval-1.248)                               |
+| 12   | [ALT at SemEval-2020 Task 12: Arabic and English Offensive Language Identification in Social Media](https://aclanthology.org/2020.semeval-1.249)                                                                    |
+| 12   | [Amsqr at SemEval-2020 Task 12: Offensive Language Detection Using Neural Networks and Anti-adversarial Features](https://aclanthology.org/2020.semeval-1.250)                                                      |
+| 12   | [BRUMS at SemEval-2020 Task 12: Transformer Based Multilingual Offensive Language Identification in Social Media](https://aclanthology.org/2020.semeval-1.251)                                                      |
+| 12   | [CoLi at UdS at SemEval-2020 Task 12: Offensive Tweet Detection with Ensembling](https://aclanthology.org/2020.semeval-1.252)                                                                                       |
+| 12   | [CyberTronics at SemEval-2020 Task 12: Multilingual Offensive Language Identification over Social Media](https://aclanthology.org/2020.semeval-1.253)                                                               |
+| 12   | [DoTheMath at SemEval-2020 Task 12 : Deep Neural Networks with Self Attention for Arabic Offensive Language Detection](https://aclanthology.org/2020.semeval-1.254)                                                 |
+| 12   | [Duluth at SemEval-2020 Task 12: Offensive Tweet Identification in English with Logistic Regression](https://aclanthology.org/2020.semeval-1.255)                                                                   |
+| 12   | [Ferryman at SemEval-2020 Task 12: BERT-Based Model with Advanced Improvement Methods for Multilingual Offensive Language Identification](https://aclanthology.org/2020.semeval-1.256)                              |
+| 12   | [Garain at SemEval-2020 Task 12: Sequence Based Deep Learning for Categorizing Offensive Language in Social Media](https://aclanthology.org/2020.semeval-1.257)                                                     |
+| 12   | [Hitachi at SemEval-2020 Task 12: Offensive Language Identification with Noisy Labels Using Statistical Sampling and Post-Processing](https://aclanthology.org/2020.semeval-1.258)                                  |
+| 12   | [I2C at SemEval-2020 Task 12: Simple but Effective Approaches to Offensive Speech Detection in Twitter](https://aclanthology.org/2020.semeval-1.259)                                                                |
+| 12   | [iCompass at SemEval-2020 Task 12: From a Syntax-ignorant N-gram Embeddings Model to a Deep Bidirectional Language Model](https://aclanthology.org/2020.semeval-1.260)                                              |
+| 12   | [IITP-AINLPML at SemEval-2020 Task 12: Offensive Tweet Identification and Target Categorization in a Multitask Environment](https://aclanthology.org/2020.semeval-1.261)                                            |
+| 12   | [INGEOTEC at SemEval-2020 Task 12: Multilingual Classification of Offensive Text](https://aclanthology.org/2020.semeval-1.262)                                                                                      |
+| 12   | [IR3218-UI at SemEval-2020 Task 12: Emoji Effects on Offensive Language IdentifiCation](https://aclanthology.org/2020.semeval-1.263)                                                                                |
+| 12   | [IRLab_DAIICT at SemEval-2020 Task 12: Machine Learning and Deep Learning Methods for Offensive Language Identification](https://aclanthology.org/2020.semeval-1.264)                                               |
+| 12   | [IRlab@IITV at SemEval-2020 Task 12: Multilingual Offensive Language Identification in Social Media Using SVM](https://aclanthology.org/2020.semeval-1.265)                                                         |
+| 12   | [JCT at SemEval-2020 Task 12: Offensive Language Detection in Tweets Using Preprocessing Methods, Character and Word N-grams](https://aclanthology.org/2020.semeval-1.266)                                          |
+| 12   | [KAFK at SemEval-2020 Task 12: Checkpoint Ensemble of Transformers for Hate Speech Classification](https://aclanthology.org/2020.semeval-1.267)                                                                     |
+| 12   | [KDELAB at SemEval-2020 Task 12: A System for Estimating Aggression of Tweets Using Two Layers of BERT Features](https://aclanthology.org/2020.semeval-1.268)                                                       |
+| 12   | [KEIS@JUST at SemEval-2020 Task 12: Identifying Multilingual Offensive Tweets Using Weighted Ensemble and Fine-Tuned BERT](https://aclanthology.org/2020.semeval-1.270)                                             |
+| 12   | [KS@LTH at SemEval-2020 Task 12: Fine-tuning Multi- and Monolingual Transformer Models for Offensive Language Detection](https://aclanthology.org/2020.semeval-1.270)                                               |
+| 12   | [KUISAIL at SemEval-2020 Task 12: BERT-CNN for Offensive Speech Identification in Social Media](https://aclanthology.org/2020.semeval-1.271)                                                                        |
+| 12   | [Kungfupanda at SemEval-2020 Task 12: BERT-Based Multi-TaskLearning for Offensive Language Detection](https://aclanthology.org/2020.semeval-1.272)                                                                  |
+| 12   | [Lee at SemEval-2020 Task 12: A BERT Model Based on the Maximum Self-ensemble Strategy for Identifying Offensive Language](https://aclanthology.org/2020.semeval-1.273)                                             |
+| 12   | [LIIR at SemEval-2020 Task 12: A Cross-Lingual Augmentation Approach for Multilingual Offensive Language Identification](https://aclanthology.org/2020.semeval-1.274)                                               |
+| 12   | [LISAC FSDM-USMBA Team at SemEval-2020 Task 12: Overcoming AraBERT’s pretrain-finetune discrepancy for Arabic offensive language identification](https://aclanthology.org/2020.semeval-1.275)                       |
+| 12   | [NAYEL at SemEval-2020 Task 12: TF/IDF-Based Approach for Automatic Offensive Language Detection in Arabic Tweets](https://aclanthology.org/2020.semeval-1.276)                                                     |
+| 12   | [NLP_Passau at SemEval-2020 Task 12: Multilingual Neural Network for Offensive Language Detection in English, Danish and Turkish](https://aclanthology.org/2020.semeval-1.277)                                      |
+| 12   | [nlpUP at SemEval-2020 Task 12 : A Blazing Fast System for Offensive Language Detection](https://aclanthology.org/2020.semeval-1.278)                                                                               |
+| 12   | [NTU_NLP at SemEval-2020 Task 12: Identifying Offensive Tweets Using Hierarchical Multi-Task Learning Approach](https://aclanthology.org/2020.semeval-1.279)                                                        |
+| 12   | [PGSG at SemEval-2020 Task 12: BERT-LSTM with Tweets’ Pretrained Model and Noisy Student Training Method](https://aclanthology.org/2020.semeval-1.280)                                                              |
+| 12   | [Pin_cod_ at SemEval-2020 Task 12: Injecting Lexicons into Bidirectional Long Short-Term Memory Networks to Detect Turkish Offensive Tweets](https://aclanthology.org/2020.semeval-1.281)                           |
+| 12   | [problemConquero at SemEval-2020 Task 12: Transformer and Soft Label-based Approaches](https://aclanthology.org/2020.semeval-1.282)                                                                                 |
+| 12   | [SalamNET at SemEval-2020 Task 12: Deep Learning Approach for Arabic Offensive Language Detection](https://aclanthology.org/2020.semeval-1.283)                                                                     |
+| 12   | [Smatgrisene at SemEval-2020 Task 12: Offense Detection by AI - with a Pinch of Real I](https://aclanthology.org/2020.semeval-1.284)                                                                                |
+| 12   | [Sonal.kumari at SemEval-2020 Task 12: Social Media Multilingual Offensive Text Identification and Categorization Using Neural Network Models](https://aclanthology.org/2020.semeval-1.285)                         |
+| 12   | [Ssn_nlp at SemEval 2020 Task 12: Offense Target Identification in Social Media Using Traditional and Deep Machine Learning Approaches](https://aclanthology.org/2020.semeval-1.286)                                |
+| 12   | [SSN_NLP_MLRG at SemEval-2020 Task 12: Offensive Language Identification in English, Danish, Greek Using BERT and Machine Learning Approach](https://aclanthology.org/2020.semeval-1.287)                           |
+| 12   | [SU-NLP at SemEval-2020 Task 12: Offensive Language IdentifiCation in Turkish Tweets](https://aclanthology.org/2020.semeval-1.288)                                                                                  |
+| 12   | [TAC at SemEval-2020 Task 12: Ensembling Approach for Multilingual Offensive Language Identification in Social Media](https://aclanthology.org/2020.semeval-1.289)                                                  |
+| 12   | [Team Rouges at SemEval-2020 Task 12: Cross-lingual Inductive Transfer to Detect Offensive Language](https://aclanthology.org/2020.semeval-1.290)                                                                   |
+| 12   | [TECHSSN at SemEval-2020 Task 12: Offensive Language Detection Using BERT Embeddings](https://aclanthology.org/2020.semeval-1.291)                                                                                  |
+| 12   | [TheNorth at SemEval-2020 Task 12: Hate Speech Detection Using RoBERTa](https://aclanthology.org/2020.semeval-1.292)                                                                                                |
+| 12   | [UJNLP at SemEval-2020 Task 12: Detecting Offensive Language Using Bidirectional Transformers](https://aclanthology.org/2020.semeval-1.293)                                                                         |
+| 12   | [UNT Linguistics at SemEval-2020 Task 12: Linear SVC with Pre-trained Word Embeddings as Document Vectors and Targeted Linguistic Features](https://aclanthology.org/2020.semeval-1.294)                            |
+| 12   | [UoB at SemEval-2020 Task 12: Boosting BERT with Corpus Level Information](https://aclanthology.org/2020.semeval-1.295)                                                                                             |
+| 12   | [UPB at SemEval-2020 Task 12: Multilingual Offensive Language Detection on Social Media by Fine-tuning a Variety of BERT-based Models](https://aclanthology.org/2020.semeval-1.296)                                 |
+| 12   | [UTFPR at SemEval 2020 Task 12: Identifying Offensive Tweets with Lightweight Ensembles](https://aclanthology.org/2020.semeval-1.297)                                                                               |
+| 12   | [WOLI at SemEval-2020 Task 12: Arabic Offensive Language Identification on Different Twitter Datasets](https://aclanthology.org/2020.semeval-1.298)                                                                 |
+| 12   | [XD at SemEval-2020 Task 12: Ensemble Approach to Offensive Language Identification in Social Media Using Transformer Encoders](https://aclanthology.org/2020.semeval-1.299)                                        |
+| 12   | [YNU_oxz at SemEval-2020 Task 12: Bidirectional GRU with Capsule for Identifying Multilingual Offensive Language](https://aclanthology.org/2020.semeval-1.300)                                                      |
