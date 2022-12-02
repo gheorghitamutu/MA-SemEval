@@ -15,6 +15,8 @@ Machine Translation Final Project - SemEval
     - [Task 2: Multilingual Complex Named Entity Recognition (MultiCoNER 2)](#task-2-multilingual-complex-named-entity-recognition-multiconer-2)
     - [Task 3: Detecting the Category, the Framing, and the Persuasion Techniques in Online News in a Multi-lingual Setup](#task-3-detecting-the-category-the-framing-and-the-persuasion-techniques-in-online-news-in-a-multi-lingual-setup)
     - [Task 9: Multilingual Tweet Intimacy Analysis](#task-9-multilingual-tweet-intimacy-analysis)
+- [Partial Conclusion before choosing the project](#partial-conclusion-before-choosing-the-project)
+- [Top Models for Task 2 (Work in progress)](#top-models-for-task-2-work-in-progress)
 
 
 # State of Art
@@ -304,13 +306,10 @@ From the paper, best systems were DAMO-NLP & USTC-NELSLIP followed by QTrade AI.
 > a dense vector representation for each token. Another network uses a frozen XLM-RoBERTa to produce an embedding vector for each token. 
 > A KL divergence loss is applied to make the Gazetteer network’s output similar to the LM. These two networks are jointly trained together again and their outputs are fused together for the final prediction.
 
-> USTC-NELSLIP (Chen et al., 2022a) ranked 1st in three tracks (MIX, ZH, BN), and 2nd for all the other tracks. 
-> The average performance gap between USTC-NELSLIP and DAMO-NLP is ≈3% for all the 13 tracks. 
-> USTC-NELSLIP aimed at fine-tuning a Gazetteer enhanced BiLSTM network in such a way that the representation produced for an entity has similarity with the representation produced by a pre-trained language model (LM).
-> They developed a two-step process with two parallel networks, where a Gazetteer-BiLSTM uses a Gazetteer search to produce one-hot labels for each token in a given text and a BiLSTM produces
-> a dense vector representation for each token. Another network uses a frozen XLM-RoBERTa to produce an embedding vector for each token. 
-> A KL divergence loss is applied to make the Gazetteer network’s output similar to the LM. 
-> These two networks are jointly trained together again and their outputs are fused together for the final prediction.
+> QTrade AI (Gan et al., 2022) ranked 3rd in MULTI, 4th in MIX, and 8th in ZH. 
+> They used an XLM-RoBERTa encoder and applied sample mixing for data augmentation, along with adversarial training through data noising. 
+> For the multilingual track, they leveraged an architecture with shared and per-language representations. 
+> Finally, they created an ensemble of models trained with different approaches.
 
 The entire list also contains: SeqL & CMB AI Lab. Other noteworthy systems were RACAI, Sliced, MaChAmp, OPDAI, CASIA, PAI, SU-NLP, Infrrd.ai, UM6P-CS, Multilinguals, L3i, MarSan, TEAM-Atreides, UA-KO
 CSECU-DSG, PA Ph&Tech, Raccoons, AaltoNLP, LMN, UC3M-PUCPR, NamedEntityRangers, CMNEROne, KDDIE, DS4DH & NCUEE-NLP. All of them are presented in the paper.
@@ -361,4 +360,29 @@ From a personal viewpoint, I didn't find much data on SemEval about this type of
 No previous multilingual Twitter Intimacy Analysis were given at SemEval but there are several papers quantifying this:
 - [Self-disclosure topic model for classifying and analyzing Twitter conversations](https://aclanthology.org/D14-1213.pdf)
 - [Quantifying Intimacy in Language](https://aclanthology.org/2020.emnlp-main.428.pdf)
+
 Probably the hardest part is using a model targeting the multilingual viewpoint.
+
+# Partial Conclusion before choosing the project
+I'd probably go with [Task 2: Multilingual Complex Named Entity Recognition (MultiCoNER 2)](http://multiconer.github.io) and see what I can get from the best models available.
+I assume tweaking the models will come after researching each model involved in top 3 systems from last year. I'll continue with a list and their implementation in Python (packages, usage, etc).
+
+# Top Models for Task 2 (Work in progress)
+
+
+[DAMO-NLP at SemEval-2022 Task 11: A Knowledge-based System for Multilingual Named Entity Recognition](https://aclanthology.org/2022.semeval-1.200)
+> *knowledge retrieval module to retrieve K most relevant paragraphs* from a knowledge base
+> token representations were passed through a *CRF* to predict the labels
+> multiple such *XLM-RoBERTa* models with random seeds and then used a voting strategy to make the final prediction
+
+[USTC-NELSLIP at SemEval-2022 Task 11: Gazetteer-Adapted Integration Network for Multilingual Complex Named Entity Recognition](https://aclanthology.org/2022.semeval-1.223)
+> fine-tuning a *Gazetteer* enhanced *BiLSTM network*
+> a two-step process with two parallel networks, where a Gazetteer-BiLSTM uses a *Gazetteer* search to produce *one-hot labels* for each token in a given text and a *BiLSTM* produces a *dense vector representation* for each token
+> uses a *frozen XLM-RoBERTa* to produce an embedding vector for each token
+> *KL divergence* loss is applied to make the Gazetteer network’s output similar to the LM
+> These two networks are jointly trained together again and *their outputs are fused together* for the final prediction
+
+[Qtrade AI at SemEval-2022 Task 11: An Unified Framework for Multilingual NER Task](https://aclanthology.org/2022.semeval-1.228)
+> *XLM-RoBERTa encoder* and applied sample mixing for data augmentation, along with adversarial training through data noising
+> leveraged an *architecture with shared and per-language* representations
+> created an *ensemble of models* trained with different approaches
