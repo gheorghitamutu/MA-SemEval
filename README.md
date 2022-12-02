@@ -267,48 +267,72 @@ method of this study, section 4 resumes the results of the conducted experiments
 ### MultiCoNER
 
 MultiCoNER purpose:
-> Complex named entities (NE), like the titles of creative works, are not simple nouns and pose challenges for NER systems (Ashwini and Choi, 2014). 
+> Complex named entities (NE), like the titles of creative works, are not simple nouns and pose challenges for NER systems (Ashwini and Choi, 2014).
+>  
 > They can take the form of any linguistic constituent, like an imperative clause (“Dial M for Murder”), and do not look like traditional NEs (Persons, Locations, etc.). 
+> 
 > This syntactic ambiguity makes it challenging to recognize them based on context.
 > 
 MultiCoNER had a task in 2022 at category [Information extraction - Task 11: MultiCoNER - Multilingual Complex Named Entity Recognition](https://multiconer.github.io).
 
 Its findings are presented [here](https://aclanthology.org/2022.semeval-1.196.pdf).
+
 > Divided into 13 tracks, the task focused on methods to identify complex named entities (like media titles, products, and groups) in 11 languages in both monolingual and multi-lingual scenarios.
+> 
 > Eleven tracks were for building monolingual NER models for individual languages, one track focused on multilingual models able to work on all languages, and the last track featured 
+> 
 > code-mixed texts within any of these languages.
 
 Subsets:
 > Monolingual Subsets: Each of the 11 languages has its own subset, which includes data from all three domains.
+> 
 > Multilingual Subset: This contains randomly sampled data from all the languages mixed into a single subset. 
+> 
 > This subset is designed for evaluating multilingual models, and should ideally be used under the assumption that the language for each sentence is unknown.
+> 
 > Code-mixed Subset: This subset contains codemixed instances, where the entity is from one language and the rest of the text is written in another language. 
+> 
 > Like the multilingual subset, this subset should also be used under the assumption that the languages present in an instance are unknown.
 
 Participating Systems and Results:
 > received submissions from 55 different teams. Among the monolingual tracks, we have observed the highest participation of 30 teams in the English track.
+> 
 > Ordered by the number of participating teams, the other monolingual tracks are Chinese (21), Bangla (18), Spanish (18), Hindi (17), Korean (17), German (16), Dutch (15), Farsi (15), Turkish (15), and Russian (14). 
+> 
 > The number of participating teams for the Multilingual and Code-mixed tracks are 25 and 21, respectively.
+> 
 > Most of the top-performing teams aimed at building their system targeting the multilingual track, and then retrained it for the other tracks separately and made submissions to all the 13 tracks.
 
 Top Multilingual Systems
 From the paper, best systems were DAMO-NLP & USTC-NELSLIP followed by QTrade AI.
 
 > DAMO-NLP (Wang et al., 2022) ranked 1st in the multilingual (MULTI) track and all the monolingual tracks except BN (2nd) and ZH (4th). 
+> 
 > Given a text, they used a knowledge retrieval module to retrieve K most relevant paragraphs from a knowledge base (i.e. Wikipedia). 
+> 
 > Paragraphs were concatenated together with the input, and token representations were passed through a CRF to predict the labels. 
+> 
 > They employed multiple such XLMRoBERTa models with random seeds and then used a voting strategy to make the final prediction.
+> 
 
 > USTC-NELSLIP (Chen et al., 2022a) ranked 1st in three tracks (MIX, ZH, BN), and 2nd for all the other tracks. 
+> 
 > The average performance gap between USTC-NELSLIP and DAMO-NLP is ≈3% for all the 13 tracks. 
+> 
 > USTC-NELSLIP aimed at fine-tuning a Gazetteer enhanced BiLSTM network in such a way that the representation produced for an entity has similarity with the representation produced by a pre-trained language model (LM).
+> 
 > They developed a two-step process with two parallel networks, where a Gazetteer-BiLSTM uses a Gazetteer search to produce one-hot labels for each token in a given text and a BiLSTM produces 
+> 
 > a dense vector representation for each token. Another network uses a frozen XLM-RoBERTa to produce an embedding vector for each token. 
+> 
 > A KL divergence loss is applied to make the Gazetteer network’s output similar to the LM. These two networks are jointly trained together again and their outputs are fused together for the final prediction.
 
 > QTrade AI (Gan et al., 2022) ranked 3rd in MULTI, 4th in MIX, and 8th in ZH. 
+> 
 > They used an XLM-RoBERTa encoder and applied sample mixing for data augmentation, along with adversarial training through data noising. 
+> 
 > For the multilingual track, they leveraged an architecture with shared and per-language representations. 
+> 
 > Finally, they created an ensemble of models trained with different approaches.
 
 The entire list also contains: SeqL & CMB AI Lab. Other noteworthy systems were RACAI, Sliced, MaChAmp, OPDAI, CASIA, PAI, SU-NLP, Infrrd.ai, UM6P-CS, Multilinguals, L3i, MarSan, TEAM-Atreides, UA-KO
@@ -316,7 +340,9 @@ CSECU-DSG, PA Ph&Tech, Raccoons, AaltoNLP, LMN, UC3M-PUCPR, NamedEntityRangers, 
 
 Conclusion
 > Most of the top-performing teams in MULTICONER utilized external knowledge bases like Wikipedia and Gazetteer. They also tend to use XLM-RoBERTa as the pre-trained language model. 
+> 
 > In terms of modeling approaches, ensemble strategies helped the systems to achieve strong performance. 
+> 
 > Results from the top teams indicate that identifying complex entities like creative works is still difficult among all the classes even with the usage of external data.
 
 # Options from SemEVAL 2023 tasks
@@ -325,24 +351,34 @@ From the 3 multilingual tasks available for this edition:
 
 ### [Task 2: Multilingual Complex Named Entity Recognition (MultiCoNER 2)](http://multiconer.github.io) 
 > Complex named entities (NE), like the titles of creative works, are not simple nouns and pose challenges for NER systems (Ashwini and Choi, 2014). 
+> 
 > They can take the form of any linguistic constituent, like an imperative clause (“Dial M for Murder”), and do not look like traditional NEs (Persons, Locations, etc.). 
+> 
 > This syntactic ambiguity makes it challenging to recognize them based on context. 
+> 
 > We organized the MultiCoNER task (Malmasi et al., 2022) at SemEval-2022 to address these challenges in 11 languages, receiving a very positive community response with 34 system papers. 
+> 
 > Results confirmed the challenges of processing complex and long-tail NEs: even the largest pre-trained Transformers did not achieve top performance without external knowledge. 
+> 
 > The top systems infused transformers with knowledge bases and gazetteers. 
+> 
 > However, such solutions are brittle against out of knowledge-base entities and noisy scenarios like the presence of spelling mistakes and typos. 
+> 
 > We propose MultiCoNER II which represents novel challenges through new tasks that emphasize the shortcomings of the current top models.
 
 There are examples from the past year. It may be the *easiest* to reproduce and then maybe tweaking the systems for better results. We already know what worked and what not.
 
 ### [Task 3: Detecting the Category, the Framing, and the Persuasion Techniques in Online News in a Multi-lingual Setup](https://propaganda.math.unipd.it/semeval2023task3)
 > Subtask 1: News Genre Categorisation
+> 
 > Definition: given a news article, determine whether it is an opinion piece, aims at objective news reporting, or is a satire piece. This is a multi-class (single-label) task at article-level.
 
 > Subtask 2: Framing Detection
+> 
 > Definition: given a news article, identify the frames used in the article. This is a multi-label task at article-level.
 
 > Subtask 3: Persuasion Techniques Detection
+> 
 > Definition 1: given a news article, identify the persuasion techniques in each paragraph. This is a multi-label task at paragraph level.
 
 From a personal viewpoint, I didn't find much data on SemEval about this type of task. It may require the most research to be done comparing with Task 2 & Task 9.
@@ -350,11 +386,17 @@ From a personal viewpoint, I didn't find much data on SemEval about this type of
 ### [Task 9: Multilingual Tweet Intimacy Analysis](https://semeval.github.io/SemEval2023/tasks#:~:text=Task%209%3A%20Multilingual%20Tweet%20Intimacy%20Analysis) 
 
 > The goal of this task is to predict the intimacy of tweets in 10 languages. 
+> 
 > You are given a set of tweets in six languages (English, Spanish, Italian, Portuguese, French, and Chinese) annotated with intimacy scores ranging from 1-5 to train your model.
+> 
 > You are encouraged (but not required) to also use the question intimacy dataset (Pei and Jurgens, 2020) which contains 2247 English questions from Reddit as well as another 150 questions from Books, Movies, and Twitter. 
+> 
 > Please note that the intimacy scores in this dataset range from -1 to 1 so you might need to consider data augmentation methods or other methods mapping the intimacy scores to the 1-5 range in the current task. 
+> 
 > Please check out the paper for more details about this question intimacy dataset.
+> 
 > The model performance will be evaluated on the test set in the given 6 languages as well as an external test set with 4 languages not in the training data (Hindi, Arabic, Dutch and Korean).
+> 
 > We will use Pearson's r as the evaluation metric. 
 
 No previous multilingual Twitter Intimacy Analysis were given at SemEval but there are several papers quantifying this:
@@ -372,17 +414,25 @@ I assume tweaking the models will come after researching each model involved in 
 
 [DAMO-NLP at SemEval-2022 Task 11: A Knowledge-based System for Multilingual Named Entity Recognition](https://aclanthology.org/2022.semeval-1.200)
 > *knowledge retrieval module to retrieve K most relevant paragraphs* from a knowledge base
+> 
 > token representations were passed through a *CRF* to predict the labels
+> 
 > multiple such *XLM-RoBERTa* models with random seeds and then used a voting strategy to make the final prediction
 
 [USTC-NELSLIP at SemEval-2022 Task 11: Gazetteer-Adapted Integration Network for Multilingual Complex Named Entity Recognition](https://aclanthology.org/2022.semeval-1.223)
 > fine-tuning a *Gazetteer* enhanced *BiLSTM network*
+> 
 > a two-step process with two parallel networks, where a Gazetteer-BiLSTM uses a *Gazetteer* search to produce *one-hot labels* for each token in a given text and a *BiLSTM* produces a *dense vector representation* for each token
+> 
 > uses a *frozen XLM-RoBERTa* to produce an embedding vector for each token
+> 
 > *KL divergence* loss is applied to make the Gazetteer network’s output similar to the LM
+> 
 > These two networks are jointly trained together again and *their outputs are fused together* for the final prediction
 
 [Qtrade AI at SemEval-2022 Task 11: An Unified Framework for Multilingual NER Task](https://aclanthology.org/2022.semeval-1.228)
 > *XLM-RoBERTa encoder* and applied sample mixing for data augmentation, along with adversarial training through data noising
+> 
 > leveraged an *architecture with shared and per-language* representations
+> 
 > created an *ensemble of models* trained with different approaches
