@@ -16,8 +16,9 @@ Machine Translation Final Project - SemEval
     - [Task 3: Detecting the Category, the Framing, and the Persuasion Techniques in Online News in a Multi-lingual Setup](#task-3-detecting-the-category-the-framing-and-the-persuasion-techniques-in-online-news-in-a-multi-lingual-setup)
     - [Task 9: Multilingual Tweet Intimacy Analysis](#task-9-multilingual-tweet-intimacy-analysis)
 - [Partial Conclusion before choosing the project](#partial-conclusion-before-choosing-the-project)
-- [Top Models for Task 2 (Work in progress)](#top-models-for-task-2-work-in-progress)
+- [Top Models for Task 2](#top-models-for-task-2)
 - [Task 2 Deadlines](#task-2-deadlines)
+- [Frameworks, tools \& data for Task 2 (MultiCoNER 2)](#frameworks-tools--data-for-task-2-multiconer-2)
 - [Bibliography](#bibliography)
   - [analyticsvidhya](#analyticsvidhya)
 
@@ -412,7 +413,7 @@ Probably the hardest part is using a model targeting the multilingual viewpoint.
 I'd probably go with [Task 2: Multilingual Complex Named Entity Recognition (MultiCoNER 2)](http://multiconer.github.io) and see what I can get from the best models available.
 I assume tweaking the models will come after researching each model involved in top 3 systems from last year. I'll continue with a list and their implementation in Python (packages, usage, etc).
 
-# Top Models for Task 2 (Work in progress)
+# Top Models for Task 2
 
 
 [DAMO-NLP at SemEval-2022 Task 11: A Knowledge-based System for Multilingual Named Entity Recognition](https://aclanthology.org/2022.semeval-1.200)
@@ -451,6 +452,14 @@ I assume tweaking the models will come after researching each model involved in 
 | Notification to Authors                 | Mar 01 (Wed), 2023 |
 | Camera-ready Due                        | Apr 01 (Sat), 2023 |
 | Workshop                                |                TBD |
+
+# Frameworks, tools & data for Task 2 (MultiCoNER 2)
+| Tool                                                            | Description                                                              |
+| --------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| [Python](https://www.python.org)                                | Programming language                                                     |
+| [spaCy](https://spacy.io)                                       | Industrial-Strength Natural Language Processing (in Python)              |
+| [Codalab](http://codalab.org)                                   | Accelerating reproducible computational research                         |
+| [AWS MultiCONER data](https://registry.opendata.aws/multiconer) | A large multilingual dataset (11 languages) for Named Entity Recognition |
 
 # Bibliography
 ## analyticsvidhya
