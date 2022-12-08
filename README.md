@@ -437,6 +437,18 @@ I assume tweaking the models will come after researching each model involved in 
 > 
 > created an *ensemble of models* trained with different approaches
 
+# Task 2 Deadlines
+| Event                                   | Date               |
+| --------------------------------------- | ------------------ |
+| Trial Data Ready                        | Jul 15 (Fri), 2022 |
+| Training Data Ready                     | Sep 30 (Fri), 2022 |
+| Evaluation Start                        | Jan 10 (Tue), 2023 |
+| Evaluation End                          | Jan 31 (Tue), 2023 |
+| System Description Paper Submission Due | Feb 01 (Wed), 2023 |
+| Notification to Authors                 | Mar 01 (Wed), 2023 |
+| Camera-ready Due                        | Apr 01 (Sat), 2023 |
+| Workshop                                |                TBD |
+
 # Bibliography
 ## analyticsvidhya
 1. [NLP 01 - Introduction](https://www.analyticsvidhya.com/blog/2021/06/part-1-step-by-step-guide-to-master-natural-language-processing-nlp-in-python)
@@ -459,4 +471,3 @@ I assume tweaking the models will come after researching each model involved in 
 18. [NLP 18 - Topic Modelling using LDA (Probabilistic Approach)](https://www.analyticsvidhya.com/blog/2021/06/part-18-step-by-step-guide-to-master-nlp-topic-modelling-using-lda-probabilistic-approach)
 19. [NLP 19 - Topic Modelling using LDA (Matrix Factorization Approach)](https://www.analyticsvidhya.com/blog/2021/06/part-19-step-by-step-guide-to-master-nlp-topic-modelling-using-lda-matrix-factorization-approach)
 20. [NLP 20 - Information Retrieval](https://www.analyticsvidhya.com/blog/2021/06/part-20-step-by-step-guide-to-master-nlp-information-retrieval)
-21. [NLP 21 - Information Retrieval](https://www.analyticsvidhya.com/blog/2021/06/part-20-step-by-step-guide-to-master-nlp-information-retrieval)
