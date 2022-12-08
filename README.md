@@ -436,3 +436,27 @@ I assume tweaking the models will come after researching each model involved in 
 > leveraged an *architecture with shared and per-language* representations
 > 
 > created an *ensemble of models* trained with different approaches
+
+# Bibliography
+## analyticsvidhya
+1. [NLP 01 - Introduction](https://www.analyticsvidhya.com/blog/2021/06/part-1-step-by-step-guide-to-master-natural-language-processing-nlp-in-python)
+2. [NLP 02 - Knowledge Required to Learn NLP](https://www.analyticsvidhya.com/blog/2021/06/part-2-step-by-step-guide-to-master-natural-language-processing-nlp-in-python)
+3. [NLP 03 - Text Cleaning and Preprocessing](https://www.analyticsvidhya.com/blog/2021/06/part-3-step-by-step-guide-to-nlp-text-cleaning-and-preprocessing)
+4. [NLP 04 - Text Cleaning Techniques](https://www.analyticsvidhya.com/blog/2021/06/part-4-step-by-step-guide-to-master-natural-language-processing-in-python)
+5. [NLP 05 - Word Embedding and Text Vectorization](https://www.analyticsvidhya.com/blog/2021/06/part-5-step-by-step-guide-to-master-nlp-text-vectorization-approaches)
+6. [NLP 06 - Word2Vec](https://www.analyticsvidhya.com/blog/2021/06/part-6-step-by-step-guide-to-master-nlp-word2vec)
+7. [NLP 07 - Word Embedding in Detail](https://www.analyticsvidhya.com/blog/2021/06/part-7-step-by-step-guide-to-master-nlp-word-embedding)
+8. [NLP 08 - Useful Natural Language Processing Tasks](https://www.analyticsvidhya.com/blog/2021/06/part-8-step-by-step-guide-to-master-nlp-useful-natural-language-processing-tasks)
+9. [NLP 09 - Semantic Analysis](https://www.analyticsvidhya.com/blog/2021/06/part-9-step-by-step-guide-to-master-nlp-semantic-analysis)
+10. [NLP 10 - Named Entity Recognition](https://www.analyticsvidhya.com/blog/2021/06/part-10-step-by-step-guide-to-master-nlp-named-entity-recognition)
+11. [NLP 11 - Syntactic Analysis](https://www.analyticsvidhya.com/blog/2021/06/part-11-step-by-step-guide-to-master-nlp-syntactic-analysis)
+12. [NLP 12 - Grammar in NLP](https://www.analyticsvidhya.com/blog/2021/06/part-12-step-by-step-guide-to-master-nlp-grammar-in-nlp)
+13. [NLP 13 - Regular Expressions](https://www.analyticsvidhya.com/blog/2021/06/part-13-step-by-step-guide-to-master-nlp-regular-expressions)
+14. [NLP 14 - Basics of Topic Modelling](https://www.analyticsvidhya.com/blog/2021/06/part-14-step-by-step-guide-to-master-nlp-basics-of-topic-modelling)
+15. [NLP 15 - Topic Modelling using NMF](https://www.analyticsvidhya.com/blog/2021/06/part-15-step-by-step-guide-to-master-nlp-topic-modelling-using-nmf)
+16. [NLP 16 - Topic Modelling using LSA](https://www.analyticsvidhya.com/blog/2021/06/part-16-step-by-step-guide-to-master-nlp-topic-modelling-using-lsa)
+17. [NLP 17 - Topic Modelling using pLSA](https://www.analyticsvidhya.com/blog/2021/06/part-17-step-by-step-guide-to-master-nlp-topic-modelling-using-plsa)
+18. [NLP 18 - Topic Modelling using LDA (Probabilistic Approach)](https://www.analyticsvidhya.com/blog/2021/06/part-18-step-by-step-guide-to-master-nlp-topic-modelling-using-lda-probabilistic-approach)
+19. [NLP 19 - Topic Modelling using LDA (Matrix Factorization Approach)](https://www.analyticsvidhya.com/blog/2021/06/part-19-step-by-step-guide-to-master-nlp-topic-modelling-using-lda-matrix-factorization-approach)
+20. [NLP 20 - Information Retrieval](https://www.analyticsvidhya.com/blog/2021/06/part-20-step-by-step-guide-to-master-nlp-information-retrieval)
+21. [NLP 21 - Information Retrieval](https://www.analyticsvidhya.com/blog/2021/06/part-20-step-by-step-guide-to-master-nlp-information-retrieval)
