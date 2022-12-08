@@ -17,6 +17,9 @@ Machine Translation Final Project - SemEval
     - [Task 9: Multilingual Tweet Intimacy Analysis](#task-9-multilingual-tweet-intimacy-analysis)
 - [Partial Conclusion before choosing the project](#partial-conclusion-before-choosing-the-project)
 - [Top Models for Task 2 (Work in progress)](#top-models-for-task-2-work-in-progress)
+- [Task 2 Deadlines](#task-2-deadlines)
+- [Bibliography](#bibliography)
+  - [analyticsvidhya](#analyticsvidhya)
 
 
 # State of Art
