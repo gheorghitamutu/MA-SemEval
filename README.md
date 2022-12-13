@@ -19,6 +19,9 @@ Machine Translation Final Project - SemEval
 - [Top Models for Task 2](#top-models-for-task-2)
 - [Task 2 Deadlines](#task-2-deadlines)
 - [Frameworks, tools \& data for Task 2 (MultiCoNER 2)](#frameworks-tools--data-for-task-2-multiconer-2)
+- [Models compared](#models-compared)
+  - [SpaCy Default NER](#spacy-default-ner)
+  - [SpaCy CRF NER](#spacy-crf-ner)
 - [Bibliography](#bibliography)
   - [analyticsvidhya](#analyticsvidhya)
 
@@ -460,6 +463,21 @@ I assume tweaking the models will come after researching each model involved in 
 | [spaCy](https://spacy.io)                                       | Industrial-Strength Natural Language Processing (in Python)              |
 | [Codalab](http://codalab.org)                                   | Accelerating reproducible computational research                         |
 | [AWS MultiCONER data](https://registry.opendata.aws/multiconer) | A large multilingual dataset (11 languages) for Named Entity Recognition |
+
+# Models compared
+## SpaCy Default NER
+[SpaCy Default NER](https://spacy.io/api/architectures#parser)
+
+Used 100 iterations in order to train the model on MultiCONER en train dataset.
+The dataset was preprocessed to remove comments and transform it into examples in order to feed them to spaCy model.
+
+Results:
+
+WIP
+
+## SpaCy CRF NER
+
+WIP
 
 # Bibliography
 ## analyticsvidhya
