@@ -472,8 +472,7 @@ Used 100 iterations in order to train the model on MultiCONER en train dataset.
 The dataset was preprocessed to remove comments and transform it into examples in order to feed them to spaCy model.
 
 Results:
-
-WIP
+F-Score: 0.39276257722859664
 
 ## SpaCy CRF NER
 
