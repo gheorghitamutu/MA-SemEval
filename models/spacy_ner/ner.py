@@ -10,7 +10,7 @@ from spacy.training import Example
 import preprocess
 
 import spacy
-spacy.require_gpu()
+# spacy.require_gpu()
 
 
 def train_ner_model(source_doc_bin, language, iterations, destination_model):
@@ -23,16 +23,14 @@ def train_ner_model(source_doc_bin, language, iterations, destination_model):
     }
 
     nlp = spacy.blank(language)
-    ner = nlp.add_pipe("ner", config=config)
+    nlp.add_pipe("ner", config=config)
 
     en_train_examples = preprocess.examples_from_doc_bin(source_doc_bin, nlp)
 
     # create the model and start the training
-    scorer = Scorer()
     optimizer = nlp.begin_training()
-    now = datetime.now()
     for i in range(iterations):
-        print('Iteration #{}/{}/{}'.format(i, iterations, datetime.now() - now))
+        print('{} Iteration #{}/{}'.format(datetime.now(), i + 1, iterations))
         now = datetime.now()
         # shuffle the training data
         random.shuffle(en_train_examples)
@@ -48,6 +46,7 @@ def train_ner_model(source_doc_bin, language, iterations, destination_model):
                 nlp.update([example], sgd=optimizer, losses=losses)
 
         print('Losses {}'.format(losses))
+        print('{} Iteration #{}/{} ended: {}'.format(datetime.now(), i + 1, iterations, datetime.now() - now))
 
     # save the trained model
     nlp.to_disk(destination_model)
@@ -66,15 +65,14 @@ def train_beam_ner_model(source_doc_bin, language, iterations, destination_model
     }
 
     nlp = spacy.blank(language)
-    ner = nlp.add_pipe("beam_ner", config=config)
+    nlp.add_pipe("beam_ner", config=config)
 
     en_train_examples = preprocess.examples_from_doc_bin(source_doc_bin, nlp)
 
     # create the model and start the training
     optimizer = nlp.begin_training()
-    now = datetime.now()
     for i in range(iterations):
-        print('Iteration #{}/{}/{}'.format(i, iterations, datetime.now() - now))
+        print('{} Iteration #{}/{}'.format(datetime.now(), i + 1, iterations))
         now = datetime.now()
         # shuffle the training data
         random.shuffle(en_train_examples)
@@ -90,6 +88,7 @@ def train_beam_ner_model(source_doc_bin, language, iterations, destination_model
                 nlp.update([example], sgd=optimizer, losses=losses)
 
         print('Losses {}'.format(losses))
+        print('{} Iteration #{}/{} ended: {}'.format(datetime.now(), i + 1, iterations, datetime.now() - now))
 
     # save the trained model
     nlp.to_disk(destination_model)

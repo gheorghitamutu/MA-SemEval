@@ -21,6 +21,7 @@ Machine Translation Final Project - SemEval
 - [Frameworks, tools \& data for Task 2 (MultiCoNER 2)](#frameworks-tools--data-for-task-2-multiconer-2)
 - [Models compared](#models-compared)
   - [SpaCy Default NER](#spacy-default-ner)
+  - [SpaCy BEAM NER](#spacy-beam-ner)
   - [SpaCy CRF NER](#spacy-crf-ner)
 - [Bibliography](#bibliography)
   - [analyticsvidhya](#analyticsvidhya)
@@ -473,6 +474,14 @@ The dataset was preprocessed to remove comments and transform it into examples i
 
 Results:
 F-Score: 0.39276257722859664
+
+## SpaCy BEAM NER
+
+Used 100 iterations in order to train the model on MultiCONER en train dataset.
+The dataset was preprocessed to remove comments and transform it into examples in order to feed them to spaCy model.
+
+Results:
+F-Score: 0.38953488372093026
 
 ## SpaCy CRF NER
 

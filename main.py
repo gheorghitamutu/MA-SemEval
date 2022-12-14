@@ -41,7 +41,7 @@ def test_spacy_beam_ner():
 if __name__ == "__main__":
     # train_spacy_ner()
     # test_spacy_ner()
-    train_spacy_beam_ner()
+    # train_spacy_beam_ner()
     test_spacy_beam_ner()
 
 
