@@ -38,10 +38,18 @@ def test_spacy_beam_ner():
                                          '{}/train_dev_spacy/en-dev.conll.clean.spacy'.format(data_dir))
 
 
+def train_spacy_crf_ner():
+    data_dir = r'./MultiCoNER_2_train_dev'
+    models.spacy_ner.train_crf_ner_model('{}/train_dev/en/en-train.conll'.format(data_dir),
+                                         '{}/train_dev/en/en-dev.conll'.format(data_dir),
+                                         'en', "./model_spacy_en_crf_ner")
+
+
 if __name__ == "__main__":
     # train_spacy_ner()
     # test_spacy_ner()
     # train_spacy_beam_ner()
-    test_spacy_beam_ner()
+    # test_spacy_beam_ner()
+    train_spacy_crf_ner()
 
 

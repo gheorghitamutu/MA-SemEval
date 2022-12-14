@@ -485,6 +485,55 @@ F-Score: 0.38953488372093026
 
 ## SpaCy CRF NER
 
+Results:
+
+Fine Tuning: C1: 0.08481243523117314 C2: 0.008479814595730259 score: 0.123631650055735
+
+Most likely transitions:
+
+B-Artist   -> I-Artist   13.407984
+
+B-Politician -> I-Politician 13.101479
+
+B-Athlete  -> I-Athlete  12.794293
+
+B-OtherPER -> I-OtherPER 12.693526
+
+B-Scientist -> I-Scientist 12.550463
+
+B-Facility -> I-Facility 12.447485
+
+B-MusicalGRP -> I-MusicalGRP 12.236781
+
+B-SportsManager -> I-SportsManager 12.097365
+
+B-VisualWork -> I-VisualWork 12.080856
+
+B-Cleric   -> I-Cleric   11.828867
+
+
+Positive features:
+
+13.212218 B-Vehicle  -1:low:streamliner
+
+11.960911 B-MusicalWork -1:low:album
+
+10.204279 B-VisualWork -1:low:film
+
+10.153886 B-VisualWork -1:low:sitcom
+
+9.657351 B-Vehicle  0:prefix2:u-
+
+9.300112 I-HumanSettlement -1:low:bosnia
+
+9.247446 B-Facility 1:low:dwelling
+
+8.806462 B-MusicalGRP -1:low:band
+
+8.337420 B-MusicalWork -1:low:feeling
+
+8.294854 B-Artist   -1:low:rapper
+
 WIP
 
 # Bibliography
