@@ -1,13 +1,16 @@
 import json
 import random
+from datetime import datetime
 
 from spacy.pipeline.ner import DEFAULT_NER_MODEL
-import spacy
 from spacy.scorer import Scorer
 from spacy.util import minibatch, compounding
 from spacy.training import Example
 
 import preprocess
+
+import spacy
+spacy.require_gpu()
 
 
 def train_ner_model(source_doc_bin, language, iterations, destination_model):
@@ -27,8 +30,10 @@ def train_ner_model(source_doc_bin, language, iterations, destination_model):
     # create the model and start the training
     scorer = Scorer()
     optimizer = nlp.begin_training()
+    now = datetime.now()
     for i in range(iterations):
-        print('Iteration #{}/{}'.format(i, iterations))
+        print('Iteration #{}/{}/{}'.format(i, iterations, datetime.now() - now))
+        now = datetime.now()
         # shuffle the training data
         random.shuffle(en_train_examples)
         losses = {}
@@ -67,8 +72,10 @@ def train_beam_ner_model(source_doc_bin, language, iterations, destination_model
 
     # create the model and start the training
     optimizer = nlp.begin_training()
+    now = datetime.now()
     for i in range(iterations):
-        print('Iteration #{}/{}'.format(i, iterations))
+        print('Iteration #{}/{}/{}'.format(i, iterations, datetime.now() - now))
+        now = datetime.now()
         # shuffle the training data
         random.shuffle(en_train_examples)
         losses = {}
