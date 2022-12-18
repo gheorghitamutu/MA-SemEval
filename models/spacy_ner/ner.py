@@ -3,14 +3,12 @@ import json
 import random
 from datetime import datetime
 
-from spacy.pipeline.ner import DEFAULT_NER_MODEL
 from spacy.scorer import Scorer
 from spacy.util import minibatch, compounding
 from spacy.training import Example
 
 from tqdm.notebook import tqdm_notebook
-from spacy_crfsuite import CRFExtractor
-from spacy_crfsuite import read_file
+from spacy_crfsuite import read_file, crf_extractor
 from spacy_crfsuite.train import gold_example_to_crf_tokens
 from spacy_crfsuite.tokenizer import SpacyTokenizer
 
@@ -18,6 +16,9 @@ import preprocess
 
 import spacy
 # spacy.require_gpu()
+
+from spacy.pipeline.ner import DEFAULT_NER_MODEL, Language
+from spacy_crfsuite import CRFEntityExtractor, CRFExtractor
 
 
 def train_ner_model(source_doc_bin, language, iterations, destination_model):
@@ -258,5 +259,64 @@ def test_beam_ner_model(source_model, source_doc_bin):
     print(json.dumps(scores, indent=4))
 
 
-def test_crf_ner_model(source_model, source_doc_bin):
-    pass
+def test_crf_ner_model(crf_model, source_model, source_doc_bin):
+    nlp = spacy.load(source_model, disable=["ner"])
+
+    @Language.factory("ner-crf")
+    def create_my_component(nlp, name):
+        crf_extractor = CRFExtractor().from_disk(crf_model)
+        return CRFEntityExtractor(nlp, crf_extractor=crf_extractor)
+
+    nlp.add_pipe("ner-crf")
+    print(nlp.pipeline)
+    en_dev_examples = preprocess.examples_from_doc_bin(source_doc_bin, nlp)
+
+    examples = []
+    scorer = Scorer()
+    for text, annotations in en_dev_examples:
+        doc = nlp.make_doc(text)
+        example = Example.from_dict(doc, annotations)
+        example.predicted = nlp(str(example.predicted))
+        examples.append(example)
+
+    # https://github.com/explosion/spaCy/issues/4094 (How is the overall F Score of an NER Model calculated?)
+    scores = scorer.score(examples)
+    print(json.dumps(scores, indent=4))
+
+    #en_train_examples = []
+    #for doc in doc_bin_en_train.get_docs(nlp.vocab):
+    #    entities = [(ent.start_char, ent.end_char, ent.label_) for ent in doc.ents]
+    #    en_train_examples.append((doc.text, {"entities": entities}))
+#
+    #ner_crf = nlp.get_pipe("ner-crf").crf_extractor
+    #ner_crf.train(en_train_examples)
+#
+    ## create the model and start the training
+    #optimizer = nlp.begin_training()
+    #for i in range(20):
+    #    print('Iteration #{}/20'.format(i + 1))
+    #    # shuffle the training data
+    #    random.shuffle(en_train_examples)
+    #    # create minibatches
+    #    batches = minibatch(en_train_examples, size=compounding(4.0, 32.0, 1.001))
+    #    # update the model for each minibatch
+    #    for j, batch in enumerate(batches):
+    #        # https://stackoverflow.com/questions/66342359/nlp-update-issue-with-spacy-3-0-typeerror-e978-the-language-update-method-ta
+    #        for text, annotations in batch:
+    #            doc = nlp.make_doc(text)
+    #            example = Example.from_dict(doc, annotations)
+    #            nlp.update([example], sgd=optimizer)
+#
+    #f1_score, classification_report = crf_extractor.eval(test_examples)
+    #print(classification_report)
+#
+    ## save the trained model
+    #nlp.to_disk("./model_spacy_en_crf_ner")
+#
+    ## Test the trained model on some new text
+    #nlp = spacy.load('./model_spacy_en_crf_ner', exclude=['ner-crf'])
+    #text = 'Apple and Google are tech companies.'
+    #doc = nlp(text)
+    #for ent in doc.ents:
+    #    print(ent.text, ent.label_)
+    #displacy.serve(doc, style="ent")
