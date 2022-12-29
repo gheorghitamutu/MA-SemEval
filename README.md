@@ -807,6 +807,54 @@ But I was unable to connect it to a pipeline for along with a transformer.
 | 45  |  6200  |     16218.19  |      3000.15  | 70.33   | 69.18   | 71.53   |  0.70  |
 | 46  |  6400  |     13569.74  |      2931.55  | 71.10   | 69.30   | 72.99   |  0.71  |
 
+================================== Results ==================================
+
+| TOK   | -     |
+| ----- | ----- |
+| NER P | 70.72 |
+| NER R | 74.54 |
+| NER F | 72.58 |
+| SPEED | 3110  |
+
+
+=============================== NER (per type) ===============================
+
+|                       |       P  |      R |     F | 
+| --------------------- | -------- | ------ | ----- |
+| OtherPER              |   77.78  |  61.54 | 68.71 |
+| ORG                   |   65.00  |  66.67 | 65.82 |
+| HumanSettlement       |   85.59  |  87.16 | 86.36 |
+| Artist                |   55.22  |  87.26 | 67.64 |
+| Politician            |   70.21  |  62.26 | 66.00 |
+| Scientist             |   76.92  |  66.67 | 71.43 |
+| PublicCorp            |   81.82  |  64.29 | 72.00 |
+| OtherPROD             |   61.54  |  48.98 | 54.55 |
+| Athlete               |   78.41  |  87.34 | 82.63 |
+| Facility              |   86.27  |  84.62 | 85.44 |
+| SportsGRP             |   85.37  |  85.37 | 85.37 |
+| CarManufacturer       |   75.00  |  69.23 | 72.00 |
+| MusicalWork           |   66.67  |  68.85 | 67.74 |
+| MusicalGRP            |   78.38  |  78.38 | 78.38 |
+| WrittenWork           |   82.35  |  77.78 | 80.00 |
+| Cleric                |   80.00  |  53.33 | 64.00 |
+| VisualWork            |   75.47  |  65.57 | 70.18 |
+| Software              |   76.92  |  76.92 | 76.92 |
+| MedicalProcedure      |   64.29  |  69.23 | 66.67 |
+| SportsManager         |   82.35  |  87.50 | 84.85 |
+| Medication/Vaccine    |   83.33  |  83.33 | 83.33 |
+| Disease               |   53.33  |  44.44 | 48.48 |
+| Symptom               |   83.33  | 100.00 | 90.91 |
+| OtherLOC              |   72.22  |  81.25 | 76.47 |
+| Vehicle               |   73.68  |  70.00 | 71.79 |
+| Station               |  100.00  |  75.00 | 85.71 |
+| Food                  |   51.85  |  73.68 | 60.87 |
+| AnatomicalStructure   |   65.00  |  76.47 | 70.27 |
+| Clothing              |   87.50  |  70.00 | 77.78 |
+| PrivateCorp           |  100.00  |  18.18 | 30.77 |
+| Drink                 |   70.00  |  63.64 | 66.67 |
+| AerospaceManufacturer |   72.73  |  80.00 | 76.19 |
+| ArtWork               |   66.67  |  46.15 | 54.55 |
+
 # Bibliography
 ## analyticsvidhya
 1. [NLP 01 - Introduction](https://www.analyticsvidhya.com/blog/2021/06/part-1-step-by-step-guide-to-master-natural-language-processing-nlp-in-python)
