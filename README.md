@@ -855,6 +855,14 @@ But I was unable to connect it to a pipeline for along with a transformer.
 | AerospaceManufacturer |   72.73  |  80.00 | 76.19 |
 | ArtWork               |   66.67  |  46.15 | 54.55 |
 
+
+| Model                                                 | NER P | NER R | NER F | SPEED |
+| ----------------------------------------------------- | ----- | ----- | ----- | ----- |
+| roberta_base_en + BEAM NER                            | 70.72 | 74.54 | 72.58 | 3110  |
+| distilbert-base-uncased-finetuned-sst-2-english + NER | 73.19 | 67.82 | 70.40 | 862   |
+| xlm_roberta_base_en + NER                             | 72.84 | 72.22 | 72.53 | 2471  |
+| roberta_base_en + NER                                 | 68.36 | 72.84 | 70.53 | 6429  |
+
 # Bibliography
 ## analyticsvidhya
 1. [NLP 01 - Introduction](https://www.analyticsvidhya.com/blog/2021/06/part-1-step-by-step-guide-to-master-natural-language-processing-nlp-in-python)
