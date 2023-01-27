@@ -20,6 +20,7 @@ Machine Translation Final Project - SemEval
 - [Task 2 Deadlines](#task-2-deadlines)
 - [Frameworks, tools \& data for Task 2 (MultiCoNER 2)](#frameworks-tools--data-for-task-2-multiconer-2)
 - [Models compared](#models-compared)
+  - [Legend](#legend)
   - [SpaCy Default NER](#spacy-default-ner)
   - [SpaCy BEAM NER](#spacy-beam-ner)
   - [SpaCy CRF NER](#spacy-crf-ner)
@@ -28,6 +29,8 @@ Machine Translation Final Project - SemEval
     - [xlm\_roberta\_base\_en + NER](#xlm_roberta_base_en--ner)
     - [distilbert-base-uncased-finetuned-sst-2-english + NER](#distilbert-base-uncased-finetuned-sst-2-english--ner)
     - [roberta\_base\_en + BEAM NER](#roberta_base_en--beam-ner)
+    - [distilbert-base-uncased-finetuned-sst-2-english + BEAM NER](#distilbert-base-uncased-finetuned-sst-2-english--beam-ner)
+    - [Model comparison](#model-comparison)
 - [Bibliography](#bibliography)
   - [analyticsvidhya](#analyticsvidhya)
 
@@ -471,6 +474,15 @@ I assume tweaking the models will come after researching each model involved in 
 | [AWS MultiCONER data](https://registry.opendata.aws/multiconer) | A large multilingual dataset (11 languages) for Named Entity Recognition |
 
 # Models compared
+
+## Legend 
+
+| Notation | Name      | Description / Definition                                               |
+| -------- | --------- | ---------------------------------------------------------------------- |
+| NER P    | Precision | Percentage value indicating how many of those results are correct.     |
+| NER R    | Recall    | Percentage value indicating how many of the correct results are found. |
+| NER F    | F-score   | Harmonic mean of Precision and Recall values of a system => it answers to the following formula: 2 x [(Precision x Recall) / (Precision + Recall)]. |
+
 ## SpaCy Default NER
 [SpaCy Default NER](https://spacy.io/api/architectures#parser)
 
@@ -548,8 +560,8 @@ But I was unable to connect it to a pipeline for along with a transformer.
 
 ============================= Training pipeline =============================
 
-| E |    #    | LOSS TRANS...  | LOSS NER | ENTS_F | ENTS_P | ENTS_R | SCORE  |
-| - |  ------ | -------------- | -------- | ------ | ------ | ------ | ------ |
+| E |    #     | LOSS TRANS...  | LOSS NER   | ENTS_F  | ENTS_P | ENTS_R | SCORE  |
+| - |  ------- | -------------- | ---------- | ------- | ------ | ------ | ------ |
 |  0 |       0 |       15587.65 |    895.39  |   0.09  |   0.06  |  0.23  |  0.00 | 
 |  1 |     200 |     1175642.22 |  128620.26 |   18.76 |   22.56 |  16.05 |  0.19 | 
 |  2 |     400 |      607301.92 |  75229.26  |  21.46  |  27.68  | 17.52  |  0.21 | 
@@ -856,12 +868,91 @@ But I was unable to connect it to a pipeline for along with a transformer.
 | ArtWork               |   66.67  |  46.15 | 54.55 |
 
 
-| Model                                                 | NER P | NER R | NER F | SPEED |
-| ----------------------------------------------------- | ----- | ----- | ----- | ----- |
-| roberta_base_en + BEAM NER                            | 70.72 | 74.54 | 72.58 | 3110  |
-| distilbert-base-uncased-finetuned-sst-2-english + NER | 73.19 | 67.82 | 70.40 | 862   |
-| xlm_roberta_base_en + NER                             | 72.84 | 72.22 | 72.53 | 2471  |
-| roberta_base_en + NER                                 | 68.36 | 72.84 | 70.53 | 6429  |
+### distilbert-base-uncased-finetuned-sst-2-english + BEAM NER
+
+============================= Training pipeline =============================
+
+| E   | #      | LOSS TRANS... | LOSS BEAM_NER | ENTS_F | ENTS_P | ENTS_R | SCORE  |   
+| --- | ------ | ------------- | ------------- | ------ | ------ | ------ | ------ |
+|   0 |      0 |       2484.16 |       1127.79 |   0.18 |   0.10 |   1.00 |   0.00 |
+|   1 |    200 | 1292369920.39 |     253353.31 |  12.50 |  10.43 |  15.59 |   0.12 |
+|   2 |    400 |   61876395.12 |      86622.96 |  41.50 |  55.19 |  33.26 |   0.42 |
+|   4 |    600 |   13574742.91 |      57701.56 |  53.97 |  54.72 |  53.24 |   0.54 |
+|   5 |    800 |   17634889.84 |      42600.85 |  63.20 |  66.64 |  60.11 |   0.63 |
+|   7 |   1000 |    6546030.99 |      30392.23 |  66.33 |  67.09 |  65.59 |   0.66 |
+|   8 |   1200 |    1355454.73 |      23542.35 |  68.46 |  70.09 |  66.90 |   0.68 |
+|  10 |   1400 |     883533.74 |      15967.77 |  66.77 |  66.95 |  66.59 |   0.67 |
+|  11 |   1600 |     497234.42 |      12501.32 |  72.29 |  74.33 |  70.37 |   0.72 |
+|  13 |   1800 |    9161565.39 |       9620.60 |  70.68 |  71.63 |  69.75 |   0.71 |
+|  14 |   2000 |     105568.89 |       6396.00 |  71.61 |  73.32 |  69.98 |   0.72 |
+|  16 |   2200 |      73057.90 |       5060.82 |  71.99 |  73.11 |  70.91 |   0.72 |
+|  17 |   2400 |      49050.42 |       3726.66 |  73.94 |  74.67 |  73.23 |   0.74 |
+|  18 |   2600 |      24709.75 |       2777.18 |  71.88 |  72.16 |  71.60 |   0.72 |
+|  20 |   2800 |      13902.56 |       2256.34 |  73.16 |  73.33 |  72.99 |   0.73 |
+|  21 |   3000 |      11249.16 |       1742.92 |  70.73 |  71.56 |  69.91 |   0.71 |
+|  23 |   3200 |      11542.59 |       1355.94 |  73.45 |  75.39 |  71.60 |   0.73 |
+|  24 |   3400 |       5271.25 |       1050.57 |  73.80 |  74.47 |  73.15 |   0.74 |
+|  26 |   3600 |       5648.90 |        888.42 |  72.61 |  72.70 |  72.53 |   0.73 |
+|  27 |   3800 |       2968.32 |        770.45 |  73.24 |  73.73 |  72.76 |   0.73 |
+|  29 |   4000 |       4782.15 |        625.39 |  72.47 |  72.64 |  72.30 |   0.72 |
+
+================================== Results ====================================
+
+| TOK   |  -     |
+| ----- | ------ |
+| NER P |  74.67 |
+| NER R |  73.23 |
+| NER F |  73.94 |
+| SPEED |  850   |
+
+
+=============================== NER (per type) ===============================
+
+|                       |       P  |     R |      F |
+| --------------------- | -------- | ----- | ------ |
+| OtherPER              |   70.37  | 62.64 |  66.28 |
+| ORG                   |   73.68  | 71.79 |  72.73 |
+| HumanSettlement       |   85.59  | 87.16 |  86.36 |
+| Artist                |   79.91  | 84.43 |  82.11 |
+| Scientist             |  100.00  |  6.67 |  12.50 |
+| PublicCorp            |   65.38  | 60.71 |  62.96 |
+| OtherPROD             |   62.16  | 46.94 |  53.49 |
+| Politician            |   64.81  | 66.04 |  65.42 |
+| WrittenWork           |   72.88  | 79.63 |  76.11 |
+| Athlete               |   76.60  | 91.14 |  83.24 |
+| Facility              |   71.19  | 80.77 |  75.68 |
+| SportsGRP             |   92.31  | 87.80 |  90.00 |
+| CarManufacturer       |   66.67  | 76.92 |  71.43 |
+| MusicalWork           |   75.44  | 70.49 |  72.88 |
+| MusicalGRP            |   75.68  | 75.68 |  75.68 |
+| Cleric                |   86.67  | 86.67 |  86.67 |
+| VisualWork            |   76.79  | 70.49 |  73.50 |
+| Software              |   80.95  | 65.38 |  72.34 |
+| SportsManager         |   76.47  | 81.25 |  78.79 |
+| Medication/Vaccine    |   76.47  | 72.22 |  74.29 |
+| Disease               |   69.23  | 50.00 |  58.06 |
+| MedicalProcedure      |   66.67  | 61.54 |  64.00 |
+| Symptom               |   69.23  | 90.00 |  78.26 |
+| OtherLOC              |   62.50  | 62.50 |  62.50 |
+| Vehicle               |   68.42  | 65.00 |  66.67 |
+| AerospaceManufacturer |   72.73  | 80.00 |  76.19 |
+| Station               |   89.47  | 85.00 |  87.18 |
+| Drink                 |   66.67  | 72.73 |  69.57 |
+| Clothing              |   28.57  | 20.00 |  23.53 |
+| Food                  |   50.00  | 47.37 |  48.65 |
+| AnatomicalStructure   |   47.62  | 58.82 |  52.63 |
+| PrivateCorp           |   83.33  | 45.45 |  58.82 |
+| ArtWork               |   62.50  | 38.46 |  47.62 |
+
+### Model comparison
+
+| Model                                                      | NER P | NER R | NER F | SPEED |
+| ---------------------------------------------------------- | ----- | ----- | ----- | ----- |
+| roberta_base_en + BEAM NER                                 | 70.72 | 74.54 | 72.58 | 3110  |
+| distilbert-base-uncased-finetuned-sst-2-english + NER      | 73.19 | 67.82 | 70.40 | 862   |
+| xlm_roberta_base_en + NER                                  | 72.84 | 72.22 | 72.53 | 2471  |
+| roberta_base_en + NER                                      | 68.36 | 72.84 | 70.53 | 6429  |
+| distilbert-base-uncased-finetuned-sst-2-english + BEAM NER | 74.67 | 73.23 | 73.94 | 850   |
 
 # Bibliography
 ## analyticsvidhya
