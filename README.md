@@ -32,7 +32,14 @@ Machine Translation Final Project - SemEval
     - [distilbert-base-uncased-finetuned-sst-2-english + BEAM NER](#distilbert-base-uncased-finetuned-sst-2-english--beam-ner)
     - [dccuchile/bert-base-spanish-wwm-uncased + BEAM NER](#dccuchilebert-base-spanish-wwm-uncased--beam-ner)
     - [mrm8488/bert-spanish-cased-finetuned-ner](#mrm8488bert-spanish-cased-finetuned-ner)
-    - [Model comparison](#model-comparison)
+    - [Model data table](#model-data-table)
+- [Conclusion](#conclusion)
+  - [Results](#results)
+    - [Simple](#simple)
+    - [Detailed (English (en) track =\> Testing Phase)](#detailed-english-en-track--testing-phase)
+  - [Fine-grained Performance](#fine-grained-performance)
+  - [Performance per Class Label](#performance-per-class-label)
+  - [Flow Diagram](#flow-diagram)
 - [Bibliography](#bibliography)
   - [analyticsvidhya](#analyticsvidhya)
 
@@ -1107,7 +1114,7 @@ But I was unable to connect it to a pipeline for along with a transformer.
 | AerospaceManufacturer | 91.67 |100.00 | 95.65 |
 
 
-### Model comparison
+### Model data table
 
 | Model                                                      | NER P | NER R | NER F | SPEED | Language|
 | ---------------------------------------------------------- | ----- | ----- | ----- | ----- | ------- |
@@ -1118,6 +1125,84 @@ But I was unable to connect it to a pipeline for along with a transformer.
 | distilbert-base-uncased-finetuned-sst-2-english + BEAM NER | 74.67 | 73.23 | 73.94 | 850   | English |
 | dccuchile/bert-base-spanish-wwm-uncased + BEAM NER         | 77.52 | 76.20 | 76.85 | 6204  | Spanish |
 | mrm8488/bert-spanish-cased-finetuned-ner + BEAM NER        | 76.59 | 74.41 | 75.48 | 4900  | Spanish |
+
+# Conclusion
+
+## Results
+
+### Simple
+
+| Task   | Task Type | Fine-grained Performance (P, R, F1) | Macro Average Performance (P, R, F1) |
+| ------ | --------- | ----------------------------------- | ------------------------------------ |
+| 1 (EN) | Testing   | P: 0.6891, R: 0.543, F1: 0.5908     | P: 0.7741, R: 0.6888, F1: 0.7274     |
+
+### Detailed (English (en) track => Testing Phase)
+
+Fine-grained Performance
+-------------------------------
+
+Precision: 0.6891 | Recall: 0.543 | F1: 0.5908
+
+Performance per Class Label
+
+|Class                   |      Precision   |   Recall     |    F1      |      
+| ---------------------- | ---------------- | ------------ | ---------- |
+| Facility               |  0.7111          |  0.6154      |  0.6598    |   
+| OtherLOC               |  0.6667          |  0.375       |  0.48      |
+| HumanSettlement        |  0.8305          |  0.8991      |  0.8634    |
+| Station                |  0.7895          |  0.75        |  0.7692    |
+| VisualWork             |  0.6786          |  0.623       |  0.6496    |
+| MusicalWork            |  0.6538          |  0.5574      |  0.6018    |
+| WrittenWork            |  0.7451          |  0.7037      |  0.7238    |
+| ArtWork                |  0.6667          |  0.3077      |  0.4211    |
+| Software               |  0.6364          |  0.5385      |  0.5833    |
+| OtherCW                |  0               |  0           |  0         |
+| MusicalGRP             |  0.6667          |  0.6486      |  0.6575    |
+| PublicCorp             |  0.5             |  0.3571      |  0.4167    |
+| PrivateCorp            |  1.0             |  0.1818      |  0.3077    |
+| OtherCorp              |  0               |  0           |  0         |
+| AerospaceManufacturer  |  0.8             |  0.8         |  0.8       |
+| SportsGRP              |  0.8378          |  0.7561      |  0.7949    |
+| CarManufacturer        |  0.75            |  0.6923      |   0.72     |
+| TechCORP               |  0               |  0           |  0         |
+| ORG                    |  0.6173          |  0.641       | 0.6289     |
+| Scientist              |  0.8             |  0.2667      |    0.4     |
+| Artist                 |  0.7586          |  0.8302      | 0.7928     |
+| Athlete                |  0.8507          |  0.7215      | 0.7808     |
+| Politician             |  0.675           |  0.5094      | 0.5806     |
+| Cleric                 |  0.7             |  0.4667      |   0.56     |
+| SportsManager          |  0.6471          |  0.6875      | 0.6667     |
+| OtherPER               |  0.5258          |  0.5604      | 0.5426     |
+| Clothing               |  0.3636          |  0.4         |  0.381     |
+| Vehicle                |  0.6154          |  0.4         | 0.4848     |
+| Food                   |  0.5833          |  0.3684      | 0.4516     |
+| Drink                  |  0.6             |  0.2727      |  0.375     |
+| OtherPROD              |  0.4565          |  0.4286      | 0.4421     |
+| Medication/Vaccine     |  1.0             |  0.7222      | 0.8387     |
+| MedicalProcedure       |  0.75            |  0.4615      | 0.5714     |
+| AnatomicalStructure    |  0.625           |  0.5882      | 0.6061     |
+| Symptom                |  0.8             |  0.4         | 0.5333     |
+| Disease                |  0.4375          |  0.3889      | 0.4118     |
+
+Macro Average Performance
+
+Precision: 0.7741 | Recall: 0.6888 | F1: 0.7274
+
+Performance per Class Label
+--------------------------------------------------
+| Class      |      Precision    |    Recall     |      F1     |        
+| ---------- | ----------------- | ------------- | ----------- |
+| GRP        |        0.7828     |     0.711     |    0.7452   |
+| Medicine   |        0.7414     |    0.5658     |    0.6418   |
+| CW         |        0.7433     |    0.6465     |    0.6915   |
+| PER        |        0.9487     |    0.9231     |    0.9357   |
+| LOC        |        0.8534     |    0.8274     |    0.8402   |
+| PROD       |        0.5747     |    0.4587     |    0.5102   |
+
+
+## Flow Diagram
+
+![Alt text](MA_SemEVAL.png "Flow Diagram")
 
 # Bibliography
 ## analyticsvidhya
