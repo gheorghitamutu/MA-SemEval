@@ -506,6 +506,16 @@ I assume tweaking the models will come after researching each model involved in 
 | NER P    | Precision | Percentage value indicating how many of those results are correct.     |
 | NER R    | Recall    | Percentage value indicating how many of the correct results are found. |
 | NER F    | F-score   | Harmonic mean of Precision and Recall values of a system => it answers to the following formula: 2 x [(Precision x Recall) / (Precision + Recall)]. |
+| IOB      | IOB    | The IOB format (short for inside, outside, beginning), also commonly referred to as the BIO format, is a common tagging format for tagging tokens in a chunking task in computational linguistics (ex. named-entity recognition). https://en.wikipedia.org/wiki/Inside%E2%80%93outside%E2%80%93beginning_(tagging) |
+| I      |     | Token is inside an entity.  |
+| O      |     |  Token is outside an entity.  |
+| B      |     | Token is the beginning of an entity.  |
+| BILUO       | BILUO    | The BILOU chunking scheme (Beginning, Inside and Last tokens of multi-token chunks, Unit-length chunks and Outside) outperform BIO.  https://code.google.com/archive/p/cleartk/issues/311 & https://stackoverflow.com/questions/17116446/what-do-the-bilou-tags-mean-in-named-entity-recognition|
+| B      |     | Token is the beginning of a multi-token entity.  |
+| I      |     | Token is inside a multi-token entity.  |
+| L      |     |  Token is the last token of a multi-token entity.  |
+| U      |     |  Token is a single-token unit entity.  |
+| O      |     | Token is outside an entity.  |
 
 ## SpaCy Default NER
 [SpaCy Default NER](https://spacy.io/api/architectures#parser)
