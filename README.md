@@ -36,9 +36,24 @@ Machine Translation Final Project - SemEval
 - [Conclusion](#conclusion)
   - [Results](#results)
     - [Simple](#simple)
-    - [Detailed (English (en) track =\> Testing Phase)](#detailed-english-en-track--testing-phase)
+    - [Detailed (English (en) track =\> Testing Phase (1))](#detailed-english-en-track--testing-phase-1)
   - [Fine-grained Performance](#fine-grained-performance)
   - [Performance per Class Label](#performance-per-class-label)
+    - [Detailed (English (en) track =\> Testing Phase (2))](#detailed-english-en-track--testing-phase-2)
+  - [Fine-grained Performance](#fine-grained-performance-1)
+  - [Performance per Class Label](#performance-per-class-label-1)
+    - [Detailed (Spanish (es) track =\> Testing Phase (1))](#detailed-spanish-es-track--testing-phase-1)
+  - [Fine-grained Performance](#fine-grained-performance-2)
+  - [Performance per Class Label](#performance-per-class-label-2)
+    - [Detailed (Multi (ml) track =\> Testing Phase (1))](#detailed-multi-ml-track--testing-phase-1)
+  - [Fine-grained Performance](#fine-grained-performance-3)
+  - [Performance per Class Label](#performance-per-class-label-3)
+    - [Detailed (Swedish (sv) track =\> Testing Phase (1))](#detailed-swedish-sv-track--testing-phase-1)
+  - [Fine-grained Performance](#fine-grained-performance-4)
+  - [Performance per Class Label](#performance-per-class-label-4)
+    - [Detailed (Multi (ml) track =\> Testing Phase (2))](#detailed-multi-ml-track--testing-phase-2)
+  - [Fine-grained Performance](#fine-grained-performance-5)
+  - [Performance per Class Label](#performance-per-class-label-5)
   - [Flow Diagram](#flow-diagram)
 - [Bibliography](#bibliography)
   - [analyticsvidhya](#analyticsvidhya)
@@ -1116,15 +1131,19 @@ But I was unable to connect it to a pipeline for along with a transformer.
 
 ### Model data table
 
-| Model                                                      | NER P | NER R | NER F | SPEED | Language|
-| ---------------------------------------------------------- | ----- | ----- | ----- | ----- | ------- |
-| roberta_base_en + BEAM NER                                 | 70.72 | 74.54 | 72.58 | 3110  | English |
-| distilbert-base-uncased-finetuned-sst-2-english + NER      | 73.19 | 67.82 | 70.40 | 862   | English |
-| xlm_roberta_base_en + NER                                  | 72.84 | 72.22 | 72.53 | 2471  | English |
-| roberta_base_en + NER                                      | 68.36 | 72.84 | 70.53 | 6429  | English |
-| distilbert-base-uncased-finetuned-sst-2-english + BEAM NER | 74.67 | 73.23 | 73.94 | 850   | English |
-| dccuchile/bert-base-spanish-wwm-uncased + BEAM NER         | 77.52 | 76.20 | 76.85 | 6204  | Spanish |
-| mrm8488/bert-spanish-cased-finetuned-ner + BEAM NER        | 76.59 | 74.41 | 75.48 | 4900  | Spanish |
+| Model                                                          | NER P | NER R | NER F | SPEED | Language|
+| -------------------------------------------------------------- | ----- | ----- | ----- | ----- | ------- |
+| roberta_base_en + BEAM NER                                     | 70.72 | 74.54 | 72.58 | 3110  | English |
+| distilbert-base-uncased-finetuned-sst-2-english + NER          | 73.19 | 67.82 | 70.40 | 862   | English |
+| xlm_roberta_base_en + NER                                      | 72.84 | 72.22 | 72.53 | 2471  | English |
+| roberta_base_en + NER                                          | 68.36 | 72.84 | 70.53 | 6429  | English |
+| distilbert-base-uncased-finetuned-sst-2-english + BEAM NER     | 74.67 | 73.23 | 73.94 | 850   | English |
+| dccuchile/bert-base-spanish-wwm-uncased + BEAM NER             | 77.52 | 76.20 | 76.85 | 6204  | Spanish |
+| mrm8488/bert-spanish-cased-finetuned-ner + BEAM NER            | 76.59 | 74.41 | 75.48 | 4900  | Spanish |
+| roberta_base_en + BEAM NER (2)                                 | 58.31 | 58.72 | 58.52 | 5006  | English |
+| distilbert-base-uncased-finetuned-sst-2-english + BEAM NER (2) | 69.41 | 63.73 | 66.45 | 6477  | English |
+| mrm8488/bert-spanish-cased-finetuned-ner + BEAM NER (2)        | 69.24 | 64.74 | 66.92 | 4891  | Spanish |
+| KB/bert-base-swedish-cased                                     | 70.94 | 73.54 | 72.22 | 240   | Swedish |
 
 # Conclusion
 
@@ -1132,11 +1151,16 @@ But I was unable to connect it to a pipeline for along with a transformer.
 
 ### Simple
 
-| Task   | Task Type | Fine-grained Performance (P, R, F1) | Macro Average Performance (P, R, F1) |
-| ------ | --------- | ----------------------------------- | ------------------------------------ |
-| 1 (EN) | Testing   | P: 0.6891, R: 0.543, F1: 0.5908     | P: 0.7741, R: 0.6888, F1: 0.7274     |
+| Task    | Task Type | Fine-grained Performance (P, R, F1) | Macro Average Performance (P, R, F1) |
+| ------- | --------- | ----------------------------------- | ------------------------------------ |
+|  1 (EN) | Testing   | P: 0.6891, R: 0.543,  F1: 0.5908    | P: 0.7741, R: 0.6888, F1: 0.7274     |
+|  1 (EN) | Testing   | P: 0.6671, R: 0.5576, F1: 0.5936    | P: 0.7704, R: 0.7246, F1: 0.7461     |
+|  2 (ES) | Testing   | P: 0.6992, R: 0.6144, F1: 0.6402    | P: 0.7762, R: 0.7283, F1: 0.7513     |
+| 13 (ML) | Testing   | P: 0.198,  R: 0.1524, F1: 0.1519    | P: 0.2875, R: 0.2197, F1: 0.2094     |
+|  3 (SV) | Testing   | P: 0.6992, R: 0.6144, F1: 0.6402    | P: 0.7762, R: 0.7283, F1: 0.7513     |
+| 13 (ML) | Testing   | P: 0.2084, R: 0.1596, F1: 0.1539    | P: 0.269,  R: 0.2383, F1: 0.203      |
 
-### Detailed (English (en) track => Testing Phase)
+### Detailed (English (en) track => Testing Phase (1))
 
 Fine-grained Performance
 -------------------------------
@@ -1199,6 +1223,321 @@ Performance per Class Label
 | LOC        |        0.8534     |    0.8274     |    0.8402   |
 | PROD       |        0.5747     |    0.4587     |    0.5102   |
 
+### Detailed (English (en) track => Testing Phase (2))
+
+Fine-grained Performance
+-------------------------------
+
+Precision: 0.6671 | Recall: 0.5576 | F1: 0.5936
+
+Performance per Class Label
+
+|Class                   |      Precision   |   Recall     |    F1      |      
+| ---------------------- | ---------------- | ------------ | ---------- |
+| Facility               |     0.766            |     0.6923         |   0.7273   |   
+| OtherLOC               |    0.7143            |     0.3125         |   0.4348   |
+| HumanSettlement        |  0.7907              |   0.9358           | 0.8571   |
+| Station                |    0.9412            |        0.8         |   0.8649   |
+| VisualWork             |      0.6939          |       0.5574       |     0.6182   |
+| MusicalWork            |       0.6102         |        0.5902      |         0.6   |
+| WrittenWork            |       0.7917         |        0.7037      |      0.7451   |
+| ArtWork                |    0.6667            |     0.4615         |   0.5455   |
+| Software               |    0.6154            |     0.6154         |   0.6154   |
+| OtherCW                |         0            |          0         |        0   |
+| MusicalGRP             |      0.6829          |       0.7568       |     0.7179   |
+| PublicCorp             |      0.6316          |       0.4286       |     0.5106   |
+| PrivateCorp            |       0.6667         |        0.1818      |      0.2857   |
+| OtherCorp              |          0           |           0        |         0   |
+| AerospaceManufacturer  |        0.6667        |            0.8     |       0.7273   |
+| SportsGRP              |     0.8857           |      0.7561        |    0.8158   |
+| CarManufacturer        |   0.6923             |    0.6923          |  0.6923   |
+| TechCORP               |         0            |          0         |        0   |
+| ORG                    |    0.5581            |     0.6154         |   0.5854   |
+| Scientist              |        0.5           |         0.2        |    0.2857   |
+| Artist                 |    0.7876            |     0.8396         |   0.8128   |
+| Athlete                |    0.8082            |     0.7468         |   0.7763   |
+| Politician             |      0.6047          |       0.4906       |     0.5417   |
+| Cleric                 |    0.7143            |     0.3333         |   0.4545   |
+| SportsManager          |       0.8            |        0.5         |   0.6154   |
+| OtherPER               |    0.5278            |     0.6264         |   0.5729   |
+| Clothing               |       0.5            |        0.3         |    0.375   |
+| Vehicle                |    0.7143            |        0.5         |   0.5882   |
+| Food                   |    0.4348            |     0.5263         |   0.4762   |
+| Drink                  |    0.5556            |     0.4545         |      0.5   |
+| OtherPROD              |     0.5102           |      0.5102        |    0.5102   |
+| Medication/Vaccine     |     0.8235           |      0.7778        |       0.8   |
+| MedicalProcedure       |      1.0             |    0.5385          |     0.7   |
+| AnatomicalStructure    |      0.5833          |       0.4118       |     0.4828   |
+| Symptom                |     0.375            |        0.3         |   0.3333   |
+| Disease                |       0.4            |     0.4444         |   0.4211   |
+
+Macro Average Performance
+
+Precision: 0.7704 | Recall: 0.7246 | F1: 0.7461
+
+Performance per Class Label
+--------------------------------------------------
+| Class      |      Precision    |    Recall     |      F1     |        
+| ---------- | ----------------- | ------------- | ----------- |
+| GRP        |     0.7608     |   0.7294    |    0.7447   |
+| Medicine   |      0.855     |    0.868    |    0.8615   |
+| CW         |      0.945     |   0.9293    |    0.9371   |
+| PER        |     0.5941     |   0.5505    |    0.5714   |
+| LOC        |     0.7487     |   0.6651    |    0.7044   |
+| PROD       |     0.7187     |   0.6053    |    0.6571   |
+
+
+### Detailed (Spanish (es) track => Testing Phase (1))
+
+Fine-grained Performance
+-------------------------------
+
+Precision: 0.6891 | Recall: 0.543 | F1: 0.5908
+
+Performance per Class Label
+
+|Class                   |      Precision   |   Recall     |    F1      |      
+| ---------------------- | ---------------- | ------------ | ---------- |
+| Facility               |      0.6          |   0.5122        | 0.5526    |   
+| OtherLOC               |   0.6923          |   0.5294        |    0.6    |
+| HumanSettlement        |     0.8506        |     0.8344      |   0.8424    |
+| Station                |     0.75          |      0.8        | 0.7742    |
+| VisualWork             |     0.6957        |     0.6957      |   0.6957    |
+| MusicalWork            |      0.6977       |      0.6522     |    0.6742    |
+| WrittenWork            |      0.6042       |       0.617     |    0.6105    |
+| ArtWork                |   0.8333          |      0.5        |  0.625    |
+| Software               |   0.8148          |   0.6471        | 0.7213    |
+| OtherCW                |        0          |        0        |      0    |
+| MusicalGRP             |     0.6316        |        0.6      |   0.6154    |
+| PublicCorp             |     0.3171        |       0.65      |   0.4262    |
+| PrivateCorp            |      0.7143       |         0.5     |    0.5882    |
+| OtherCorp              |         0         |         0       |       0    |
+| AerospaceManufacturer  |   0.9091          |   0.9091        | 0.9091    |
+| SportsGRP              |    0.7143         |    0.8621       |  0.7812    |
+| CarManufacturer        |    0.9091         |    0.5882       |  0.7143    |
+| TechCORP               |        0          |        0        |      0    |
+| ORG                    |   0.7755          |   0.5588        | 0.6496    |
+| Scientist              |       0.5         |    0.5714       |  0.5333    |
+| Artist                 |   0.7168          |   0.7294        |  0.723    |
+| Athlete                |   0.8367          |   0.6119        | 0.7069    |
+| Politician             |     0.6667        |      0.566      |   0.6122    |
+| Cleric                 |      0.8          |   0.3077        | 0.4444    |
+| SportsManager          |  0.7778           |    0.35         |0.4828    |
+| OtherPER               |     0.52          |   0.5652        | 0.5417    |
+| Clothing               |   0.6923          |     0.75        |   0.72    |
+| Vehicle                |   0.6875          |   0.6471        | 0.6667    |
+| Food                   |   0.4333          |   0.5652        | 0.4906    |
+| Drink                  |     0.75          |      0.3        | 0.4286    |
+| OtherPROD              |    0.6786         |       0.5       |  0.5758    |
+| Medication/Vaccine     |    0.6667         |    0.5333       |  0.5926    |
+| MedicalProcedure       |    0.6667         |    0.7143       |  0.6897    |
+| AnatomicalStructure    |  0.7826           |    0.72         |  0.75    |
+| Symptom                |      0.8          |      0.8        |    0.8    |
+| Disease                |   0.5882          |   0.5882        | 0.5882    |
+
+Macro Average Performance
+
+Precision: 0.7762 | Recall: 0.7283 | F1: 0.7513
+
+Performance per Class Label
+--------------------------------------------------
+| Class      |      Precision    |    Recall     |      F1     |        
+| ---------- | ----------------- | ------------- | ----------- |
+| GRP        |         0.898      |   0.8167     |    0.8555   |
+| Medicine   |        0.7273      |   0.6914     |    0.7089   |
+| CW         |        0.7412      |   0.6885     |    0.7139   |
+| PER        |        0.8165      |   0.7739     |    0.7946   |
+| LOC        |        0.7033      |     0.64     |    0.6702   |
+| PROD       |        0.7708      |    0.759     |    0.7649   |
+
+### Detailed (Multi (ml) track => Testing Phase (1))
+
+Fine-grained Performance
+-------------------------------
+
+Precision: 0.198 | Recall: 0.1524 | F1: 0.1519
+
+Performance per Class Label
+
+|Class                   |      Precision   |   Recall     |    F1      |      
+| ---------------------- | ---------------- | ------------ | ---------- |
+| Facility               |    0.1463        |    0.1631        |  0.1489 |   
+| OtherLOC               |     0.151        |    0.1134        |  0.1256 |
+| HumanSettlement        |   0.3046         |   0.2226         | 0.2501 |
+| Station                |    0.1684        |    0.1292        |  0.1429 |
+| VisualWork             |      0.1294      |      0.1939      |    0.1503 |
+| MusicalWork            |       0.1133     |       0.1935     |     0.1364 |
+| WrittenWork            |       0.1409     |       0.1541     |     0.1194 |
+| ArtWork                |    0.1007        |     0.067        |  0.0726 |
+| Software               |    0.2917        |    0.2091        |  0.2181 |
+| OtherCW                |         0        |         0        |       0 |
+| MusicalGRP             |      0.2053      |      0.2153      |    0.2049 |
+| PublicCorp             |      0.1218      |      0.1849      |    0.1413 |
+| PrivateCorp            |        0.167     |       0.1538     |     0.1522 |
+| OtherCorp              |          0       |          0       |        0 |
+| AerospaceManufacturer  |     0.3476       |     0.2821       |    0.307 |
+| SportsGRP              |     0.1951       |     0.1544       |   0.1668 |
+| CarManufacturer        |   0.2941         |   0.2277         | 0.2493 |
+| TechCORP               |         0        |         0        |       0 |
+| ORG                    |    0.2343        |    0.1467        |  0.1394 |
+| Scientist              |     0.0626       |     0.0417       |   0.0476 |
+| Artist                 |    0.1832        |    0.2674        |  0.2115 |
+| Athlete                |     0.311        |     0.253        |  0.2372 |
+| Politician             |      0.1208      |       0.174      |    0.1418 |
+| Cleric                 |    0.1445        |    0.0456        |  0.0687 |
+| SportsManager          |    0.22          |  0.0545          |0.0842 |
+| OtherPER               |    0.1359        |    0.1909        |  0.1122 |
+| Clothing               |    0.1629        |    0.1102        |  0.1235 |
+| Vehicle                |    0.1654        |    0.1094        |  0.1226 |
+| Food                   |    0.0927        |     0.067        |  0.0702 |
+| Drink                  |    0.1655        |    0.0765        |  0.0991 |
+| OtherPROD              |     0.4651       |     0.1622       |   0.2151 |
+| Medication/Vaccine     |    0.3996        |    0.1853        |  0.2181 |
+| MedicalProcedure       |  0.2054          |  0.1103          |0.1241 |
+| AnatomicalStructure    |    0.1559        |    0.1154        |  0.1226 |
+| Symptom                |    0.2852        |    0.1465        |  0.1689 |
+| Disease                |    0.1464        |    0.1074        |  0.1203 |
+
+Macro Average Performance
+
+Precision: 0.2875 | Recall: 0.2197 | F1: 0.2094
+
+Performance per Class Label
+--------------------------------------------------
+| Class      |      Precision    |    Recall     |      F1     |        
+| ---------- | ----------------- | ------------- | ----------- |
+| GRP        |       0.4168    |      0.14    |    0.1751   |
+| Medicine   |       0.2479    |    0.2179    |    0.2123   |
+| CW         |       0.2503    |    0.3918    |    0.2906   |
+| PER        |       0.3108    |    0.1427    |    0.1667   |
+| LOC        |       0.2883    |    0.2128    |    0.2327   |
+| PROD       |        0.211    |    0.2132    |    0.1788   |
+
+### Detailed (Swedish (sv) track => Testing Phase (1))
+
+Fine-grained Performance
+-------------------------------
+
+Precision: 0.7167 | Recall: 0.6749 | F1: 0.6812
+
+Performance per Class Label
+
+|Class                   |      Precision   |   Recall     |    F1      |      
+| ---------------------- | ---------------- | ------------ | ---------- |
+| Facility               |    0.7187             |    0.807        |   0.7603  |   
+| OtherLOC               |    0.9394             |   0.8857        |   0.9118  |
+| HumanSettlement        |      0.9298           |     0.9258      |     0.9278  |
+| Station                |      0.75             |   0.8571        |      0.8  |
+| VisualWork             |      0.9149           |     0.7414      |      0.819  |
+| MusicalWork            |       0.7714          |      0.7297     |        0.75  |
+| WrittenWork            |       0.7424          |      0.6806     |      0.7101  |
+| ArtWork                |    0.6667             |   0.7273        |   0.6957  |
+| Software               |      0.75             |   0.6818        |   0.7143  |
+| OtherCW                |         0             |        0        |        0  |
+| MusicalGRP             |      0.7714           |     0.6923      |     0.7297  |
+| PublicCorp             |      0.5789           |     0.6875      |     0.6286  |
+| PrivateCorp            |       0.8333          |         0.5     |       0.625  |
+| OtherCorp              |          0            |         0       |         0  |
+| AerospaceManufacturer  |           0.4         |          0.2    |       0.2667  |
+| SportsGRP              |     0.8788            |    0.8056       |    0.8406  |
+| CarManufacturer        |     0.8182            |    0.5625       |    0.6667  |
+| TechCORP               |         0             |        0        |        0  |
+| ORG                    |    0.5811             |   0.6418        |   0.6099  |
+| Scientist              |     0.6667            |    0.1538       |      0.25  |
+| Artist                 |       0.5             |   0.7857        |   0.6111  |
+| Athlete                |    0.7761             |   0.7536        |   0.7647  |
+| Politician             |      0.7593           |     0.6721      |      0.713  |
+| Cleric                 |    0.5833             |   0.4118        |   0.4828  |
+| SportsManager          |    0.8571             |      0.6        |   0.7059  |
+| OtherPER               |    0.4854             |   0.5376        |   0.5102  |
+| Clothing               |       0.5             |      0.9        |   0.6429  |
+| Vehicle                |       0.5             |      0.5        |      0.5  |
+| Food                   |    0.8235             |   0.7778        |      0.8  |
+| Drink                  |    0.8235             |   0.9333        |    0.875  |
+| OtherPROD              |     0.8333            |    0.4902       |    0.6173  |
+| Medication/Vaccine     |    0.9231             |      0.8        |   0.8571  |
+| MedicalProcedure       |    0.7273             |      0.8        |   0.7619  |
+| AnatomicalStructure    |     0.7               |    0.7          |    0.7  |
+| Symptom                |       0.5             |   0.5455        |   0.5217  |
+| Disease                |    0.6471             |   0.7857        |   0.7097  |
+
+Macro Average Performance
+
+Precision: 0.8057 | Recall: 0.8024 | F1: 0.802
+
+Performance per Class Label
+--------------------------------------------------
+| Class      |      Precision    |    Recall     |      F1     |        
+| ---------- | ----------------- | ------------- | ----------- |
+| GRP        |        0.8278     |     0.745     |    0.7842   |
+| Medicine   |        0.9064     |    0.9162     |    0.9113   |
+| CW         |          0.77     |    0.6875     |    0.7264   |
+| PER        |        0.7397     |    0.7714     |    0.7552   |
+| LOC        |        0.8197     |    0.7732     |    0.7958   |
+| PROD       |        0.7707     |    0.9213     |    0.8393   |
+
+### Detailed (Multi (ml) track => Testing Phase (2))
+
+Fine-grained Performance
+-------------------------------
+
+Precision: 0.2084 | Recall: 0.1596 | F1: 0.1539
+
+Performance per Class Label
+
+|Class                   |      Precision   |   Recall     |    F1      |      
+| ---------------------- | ---------------- | ------------ | ---------- |
+| Facility               |   0.1357           |    0.1597       |   0.1421  |   
+| OtherLOC               |   0.2177           |    0.1073       |   0.1323  |
+| HumanSettlement        |    0.3145          |     0.2254      |    0.2439  |
+| Station                |   0.1904           |    0.1137       |   0.1385  |
+| VisualWork             |  0.1306            |   0.2207        |  0.1564  |
+| MusicalWork            |   0.099            |   0.1971        |  0.1237  |
+| WrittenWork            |   0.1126           |    0.2276       |    0.133  |
+| ArtWork                |   0.1279           |    0.0879       |   0.0973  |
+| Software               |   0.4377           |    0.2205       |   0.2502  |
+| OtherCW                |        0           |         0       |        0  |
+| MusicalGRP             |       0.16         |      0.1861     |     0.1666  |
+| PublicCorp             |     0.1523         |      0.1737     |     0.1517  |
+| PrivateCorp            |   0.1925           |    0.1629       |     0.17  |
+| OtherCorp              |     0              |      0          |     0  |
+| AerospaceManufacturer  |  0.3644            |   0.2669        |  0.3041  |
+| SportsGRP              |    0.1445          |     0.1356      |    0.1385  |
+| CarManufacturer        |  0.2438            |   0.1945        |  0.2102  |
+| TechCORP               |        0           |         0       |        0  |
+| ORG                    |   0.1666           |    0.1539       |   0.1266  |
+| Scientist              |    0.0554          |     0.0565      |    0.0547  |
+| Artist                 |   0.1058           |    0.3958       |   0.1616  |
+| Athlete                |   0.1718           |    0.1053       |   0.1044  |
+| Politician             |    0.087           |    0.0988       |    0.089  |
+| Cleric                 |   0.1911           |    0.0369       |   0.0576  |
+| SportsManager          |   0.2643           |    0.1334       |    0.158  |
+| OtherPER               |   0.1104           |    0.1909       |   0.0984  |
+| Clothing               |   0.2676           |    0.1595       |   0.1694  |
+| Vehicle                |     0.17           |    0.1218       |   0.1344  |
+| Food                   |   0.2634           |    0.1307       |   0.1484  |
+| Drink                  |   0.1951           |    0.0978       |   0.1244  |
+| OtherPROD              |    0.4231          |     0.1903      |    0.2299  |
+| Medication/Vaccine     |   0.4147           |    0.1858       |   0.2335  |
+| MedicalProcedure       |   0.2545           |    0.1353       |   0.1566  |
+| AnatomicalStructure    |     0.1741         |      0.0903     |      0.113  |
+| Symptom                |   0.3417           |    0.1761       |   0.2087  |
+| Disease                |   0.1961           |    0.1286       |   0.1501  |
+
+Macro Average Performance
+
+Precision: 0.269 | Recall: 0.2383 | F1: 0.203
+
+Performance per Class Label
+--------------------------------------------------
+| Class      |      Precision    |    Recall     |      F1     |        
+| ---------- | ----------------- | ------------- | ----------- |
+| GRP        |        0.4264     |    0.1766     |    0.2098   |
+| Medicine   |        0.2134     |    0.2032     |    0.1905   |
+| CW         |        0.3284     |    0.1462     |    0.1814   |
+| PER        |        0.2718     |    0.2106     |    0.2234   |
+| LOC        |        0.1612     |    0.4401     |    0.2255   |
+| PROD       |        0.2126     |    0.2532     |    0.1874   |
 
 ## Flow Diagram
 

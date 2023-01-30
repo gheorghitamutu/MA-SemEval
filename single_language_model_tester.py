@@ -113,7 +113,7 @@ def generate_prediction_file(model_path, source, target):
             if iob_tags != biluo_tags:
                 raise Exception('')
 
-            f.write('\n')
+            f.write('\n')  # USED ONLY FOR NON TEST
             f.write('\n')  # id d9b2af7f-1110-468e-a64c-75a3c7d07f6a
             for label in iob_tags:
                 f.write(f'{label}\n')
@@ -121,18 +121,21 @@ def generate_prediction_file(model_path, source, target):
 
 
 generate_prediction_file(
-    r'Z:\Repositories\github\MA-SemEval\BEAM_NER_MODELS\en\distilbert-base-uncased-finetuned-sst-2-english-20230129T000320Z-001\distilbert-base-uncased-finetuned-sst-2-english\model-best',
-    r'Z:\Repositories\github\MA-SemEval\public_da\public_data\EN-English\en_train.spacy',
-    r'Z:\Repositories\github\MA-SemEval\public_da\public_data\EN-English\en_train.pred.conll')
+    # r'Z:\Repositories\github\MA-SemEval\BEAM_NER_MODELS\es\bert-spanish-cased-finetuned-ner\model-best',
+    # r'Z:\Repositories\github\MA-SemEval\BEAM_NER_MODELS\en\distilbert-base-uncased-finetuned-sst-2-english-20230129T000320Z-001\distilbert-base-uncased-finetuned-sst-2-english\model-best',
+    # r'Z:\Repositories\github\MA-SemEval\BEAM_NER_MODELS\en\distilbert-base-uncased-finetuned-sst-2-english\model-best',
+    r'Z:\Repositories\github\MA-SemEval\BEAM_NER_MODELS\sv\KB\bert-base-swedish-cased\model-best',
+    r'Z:\Repositories\github\MA-SemEval\public_da\public_data\SV-Swedish\sv_dev.spacy',
+    r'Z:\Repositories\github\MA-SemEval\public_da\public_data\SV-Swedish\sv_dev.pred.conll')
 
-f = open(r'Z:\Repositories\github\MA-SemEval\public_da\public_data\EN-English\en_train.pred.conll', 'r', encoding='utf-8')
-g = open(r'Z:\Repositories\github\MA-SemEval\public_da\public_data\EN-English\en_train.conll', 'r', encoding='utf-8')
+f = open(r'Z:\Repositories\github\MA-SemEval\public_da\public_data\SV-Swedish\sv_dev.pred.conll', 'r', encoding='utf-8')
+g = open(r'Z:\Repositories\github\MA-SemEval\public_da\public_data\SV-Swedish\sv_dev.conll', 'r', encoding='utf-8')
 
 f_lines = f.readlines()
 g_lines = g.readlines()
 
 lineNo = 0
-for fl, gl in zip(f_lines, g_lines):
+for (i, fl), (j, gl) in zip(enumerate(f_lines), enumerate(g_lines)):
     fl = fl.strip()
     gl = gl.strip()
 

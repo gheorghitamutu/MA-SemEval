@@ -320,3 +320,23 @@ def test_crf_ner_model(crf_model, source_model, source_doc_bin):
     #for ent in doc.ents:
     #    print(ent.text, ent.label_)
     #displacy.serve(doc, style="ent")
+
+
+def test_spacy_model(source_model, source_doc_bin):
+    p = Path(source_model)
+    nlp = load_model_from_path(p)
+    en_dev_examples = preprocess.examples_from_doc_bin(source_doc_bin, nlp)
+
+    examples = []
+    scorer = Scorer()
+    for text, annotations in en_dev_examples:
+        doc = nlp.make_doc(text)
+        example = Example.from_dict(doc, annotations)
+        example.predicted = nlp(str(example.predicted))
+        examples.append(example)
+
+    # https://github.com/explosion/spaCy/issues/4094 (How is the overall F Score of an NER Model calculated?)
+    scores = scorer.score(examples)
+    print(json.dumps(scores, indent=4))
+
+    return examples
